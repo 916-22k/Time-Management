@@ -5,7 +5,7 @@ let startY = 0;
 
 // Adjust sensitivity multiplier for touch movements
 const desktopSensitivity = 0.12; // Default desktop sensitivity
-const mobileSensitivity = 10; // Increase this value for faster mobile movement
+const mobileSensitivity = 0.01; // Increase this value for faster mobile movement
 
 function updatePosition(delta) {
     positionX += delta;
