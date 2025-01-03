@@ -6,9 +6,10 @@ let scrollSpeed = 0.1;
 if (/Android/i.test(navigator.userAgent)) {
     scrollSpeed = 1.5;
 } else if (/Windows NT/i.test(navigator.userAgent)) {
-    scrollSpeed = 0.2;
+    scrollSpeed = 0.1;
 }
 
+let container = document.getElementById('container');
 let days = [];
 let currentHour = 7; // Set to 7 to represent 07:00-07:59
 
@@ -17,12 +18,7 @@ for (let dayIndex = 0; dayIndex < 1; dayIndex++) { // Focus on one day
     let day = [];
     for (let hourIndex = 0; hourIndex < 24; hourIndex++) {
         let square = document.createElement('div');
-        square.style.width = '50px';
-        square.style.height = '50px';
-        square.style.backgroundColor = 'blue';
-        square.style.position = 'absolute';
-        square.style.top = '50%'; // Align all squares on the same vertical axis
-        square.style.transform = `rotateY(60deg)`; // Keep rotation constant
+        square.className = 'square';
         square.setAttribute('data-hour', hourIndex + 1);
 
         // Calculate initial horizontal position
@@ -44,10 +40,10 @@ for (let dayIndex = 0; dayIndex < 1; dayIndex++) { // Focus on one day
     days.push(day);
 }
 
-// Append squares to the document
+// Append squares to the container
 days.forEach((day) => {
     day.forEach((hourSquare) => {
-        document.body.appendChild(hourSquare);
+        container.appendChild(hourSquare);
     });
 });
 
