@@ -3,10 +3,10 @@ let positionX = window.innerWidth / 2;
 let startX = 0;
 let startY = 0;
 
-let scrollSpeed = 0.1; // Default scroll speed for desktop
+let scrollSpeed = 0.03; // Default scroll speed for desktop
 
 // Check if the User-Agent indicates a mobile device
-if (/Mobi|Android/i.test(navigator.userAgent)) {
+if (/Android|webOS|iPhone|iPad|iPod|Opera Mini/i.test(navigator.userAgent)) {
     scrollSpeed = 100; // Increase speed for mobile
 }
 
@@ -35,3 +35,5 @@ window.addEventListener('touchmove', (event) => {
     startX = event.touches[0].clientX;
     startY = event.touches[0].clientY;
 });
+
+alert(window.navigator.userAgent);
