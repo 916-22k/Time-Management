@@ -3,6 +3,9 @@ let positionX = window.innerWidth / 2;
 let startX = 0;
 let startY = 0;
 
+// Adjust sensitivity for mobile swipe (higher number means faster movement)
+const mobileSensitivity = 0.5; // For desktop scrolling, keep this multiplier as 0.1 (no change)
+
 function updatePosition(delta) {
     positionX += delta * 0.1;
     square.style.left = positionX + 'px';
@@ -23,7 +26,7 @@ window.addEventListener('touchmove', (event) => {
     let deltaY = event.touches[0].clientY - startY;
 
     // Treat vertical movement (deltaY) as horizontal movement
-    updatePosition(deltaX + deltaY);
+    updatePosition((deltaX + deltaY) * mobileSensitivity);
 
     startX = event.touches[0].clientX;
     startY = event.touches[0].clientY;
