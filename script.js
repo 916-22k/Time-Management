@@ -1,24 +1,68 @@
-let square = document.getElementById('blue-square');
 let positionX = window.innerWidth / 2;
 let startX = 0;
 let startY = 0;
+let scrollSpeed = 0.1;
 
-let scrollSpeed = 0.1; // Default scroll speed for desktop
-
-// Check if the User-Agent is for a mobile device (Android)
 if (/Android/i.test(navigator.userAgent)) {
-    scrollSpeed = 2; // Increase speed for mobile (Android)
+    scrollSpeed = 1.5;
 } else if (/Windows NT/i.test(navigator.userAgent)) {
-    scrollSpeed = 0.1; // Default scroll speed for Windows desktop (no change needed)
+    scrollSpeed = 0.2;
 }
 
+let days = [];
+let currentHour = 7; // Set to 7 to represent 07:00-07:59
+
+// Initialize squares and assign positions
+for (let dayIndex = 0; dayIndex < 1; dayIndex++) { // Focus on one day
+    let day = [];
+    for (let hourIndex = 0; hourIndex < 24; hourIndex++) {
+        let square = document.createElement('div');
+        square.style.width = '50px';
+        square.style.height = '50px';
+        square.style.backgroundColor = 'blue';
+        square.style.position = 'absolute';
+        square.style.top = '50%'; // Align all squares on the same vertical axis
+        square.style.transform = `rotateY(60deg)`; // Keep rotation constant
+        square.setAttribute('data-hour', hourIndex + 1);
+
+        // Calculate initial horizontal position
+        if (hourIndex + 1 === currentHour) {
+            square.positionX = window.innerWidth / 2; // Center the 7th square
+        } else if (hourIndex + 1 < currentHour) {
+            let offset = (currentHour - (hourIndex + 1)) * 60; // 50px square + 10px padding
+            square.positionX = window.innerWidth / 2 - offset;
+        } else if (hourIndex + 1 > currentHour) {
+            let offset = ((hourIndex + 1) - currentHour) * 60; // 50px square + 10px padding
+            square.positionX = window.innerWidth / 2 + offset;
+        }
+
+        // Apply the calculated position to the square
+        square.style.left = `${square.positionX}px`;
+
+        day.push(square);
+    }
+    days.push(day);
+}
+
+// Append squares to the document
+days.forEach((day) => {
+    day.forEach((hourSquare) => {
+        document.body.appendChild(hourSquare);
+    });
+});
+
+// Update positions of all squares on scroll
 function updatePosition(delta) {
-    positionX += delta * scrollSpeed;
-    square.style.left = positionX + 'px';
+    days.forEach((day) => {
+        day.forEach((square) => {
+            square.positionX += delta * scrollSpeed;
+            square.style.left = `${square.positionX}px`; // Update position visually
+        });
+    });
 }
 
+// Event listeners for scrolling
 window.addEventListener('wheel', (event) => {
-    // Combine horizontal (deltaX) and vertical (deltaY) scroll into horizontal movement
     updatePosition(event.deltaX + event.deltaY);
 });
 
@@ -30,10 +74,7 @@ window.addEventListener('touchstart', (event) => {
 window.addEventListener('touchmove', (event) => {
     let deltaX = event.touches[0].clientX - startX;
     let deltaY = event.touches[0].clientY - startY;
-
-    // Treat vertical movement (deltaY) as horizontal movement
     updatePosition(deltaX + deltaY);
-
     startX = event.touches[0].clientX;
     startY = event.touches[0].clientY;
 });
