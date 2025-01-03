@@ -7,7 +7,7 @@ let scrollSpeed = 0.1; // Default scroll speed for desktop
 
 // Check if the User-Agent is for a mobile device (Android)
 if (/Android/i.test(navigator.userAgent)) {
-    scrollSpeed = 0.02; // Increase speed for mobile (Android)
+    scrollSpeed = 2; // Increase speed for mobile (Android)
 } else if (/Windows NT/i.test(navigator.userAgent)) {
     scrollSpeed = 0.1; // Default scroll speed for Windows desktop (no change needed)
 }
