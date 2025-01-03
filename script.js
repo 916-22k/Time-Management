@@ -3,18 +3,21 @@ let positionX = window.innerWidth / 2;
 let startX = 0;
 let startY = 0;
 
-// Adjust sensitivity multiplier for touch movements
-const desktopSensitivity = 0.12; // Default desktop sensitivity
-const mobileSensitivity = 100; // Increase this value for faster mobile movement
+let scrollSpeed = 0.1; // Default scroll speed for desktop
+
+// Check if the User-Agent indicates a mobile device
+if (/Mobi|Android/i.test(navigator.userAgent)) {
+    scrollSpeed = 100; // Increase speed for mobile
+}
 
 function updatePosition(delta) {
-    positionX += delta;
+    positionX += delta * scrollSpeed;
     square.style.left = positionX + 'px';
 }
 
 window.addEventListener('wheel', (event) => {
     // Combine horizontal (deltaX) and vertical (deltaY) scroll into horizontal movement
-    updatePosition((event.deltaX + event.deltaY) * desktopSensitivity);
+    updatePosition(event.deltaX + event.deltaY);
 });
 
 window.addEventListener('touchstart', (event) => {
@@ -23,12 +26,11 @@ window.addEventListener('touchstart', (event) => {
 });
 
 window.addEventListener('touchmove', (event) => {
-    // Calculate movement difference in both X and Y directions
     let deltaX = event.touches[0].clientX - startX;
     let deltaY = event.touches[0].clientY - startY;
 
-    // Combine X and Y movement and apply a higher sensitivity for mobile
-    updatePosition((deltaX + deltaY) * mobileSensitivity);
+    // Treat vertical movement (deltaY) as horizontal movement
+    updatePosition(deltaX + deltaY);
 
     startX = event.touches[0].clientX;
     startY = event.touches[0].clientY;
