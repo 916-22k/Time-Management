@@ -11,7 +11,9 @@ if (/Android/i.test(navigator.userAgent)) {
 
 let container = document.getElementById('container');
 let days = [];
-let currentHour = 7; // Set to 7 to represent 07:00-07:59
+
+// Get the current hour (0-23)
+let currentHour = new Date().getHours();
 
 // Initialize squares and assign positions
 for (let dayIndex = 0; dayIndex < 1; dayIndex++) { // Focus on one day
@@ -23,7 +25,7 @@ for (let dayIndex = 0; dayIndex < 1; dayIndex++) { // Focus on one day
 
         // Calculate initial horizontal position
         if (hourIndex + 1 === currentHour) {
-            square.positionX = window.innerWidth / 2; // Center the 7th square
+            square.positionX = window.innerWidth / 2; // Center the current hour square
         } else if (hourIndex + 1 < currentHour) {
             let offset = (currentHour - (hourIndex + 1)) * 60; // 50px square + 10px padding
             square.positionX = window.innerWidth / 2 - offset;
