@@ -1,8 +1,28 @@
 body {
     margin: 0;
-    padding: 0;
-    background-color: black;
     overflow: hidden;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: black;
+}
+
+#textbox {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 75%;
+    padding: 10px;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-size: 13px;
+    color: white;
+    text-align: center;
+    border: 4px solid green;
+    border-radius: 8px;
+    background-color: black;
+    z-index: 2;
 }
 
 #container {
@@ -14,52 +34,20 @@ body {
 }
 
 .square {
+    position: absolute;
     width: 50px;
     height: 50px;
     background-color: green;
-    position: absolute;
-    top: 50%; /* Center vertically */
-    transform: translateY(-50%) rotateX(-10deg) rotateY(60deg);
-}
-
-#textbox {
-    position: absolute;
-    top: 5%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 75%;
-    text-align: center;
-    font-family: "Comic Sans MS", cursive, sans-serif;
-    font-size: 13px;
-    font-weight: bold;
-    color: white;
-    border: 4px solid green;
-    border-radius: 10px;
-    padding: 10px;
-    background-color: black;
-    z-index: 2; /* Ensure it appears above other elements */
+    border-radius: 4px;
+    transition: left 0.3s ease;
 }
 
 #line {
     position: fixed;
-    top: calc(5% + 40px); /* Start at the bottom center of the textbox */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 4px;
-    height: 200%; /* Overflow past the browser's height */
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
     background-color: green;
-    z-index: 1; /* Ensure it overlays the squares */
-    pointer-events: none; /* Ensure it doesn't interfere with user interactions */
-}
-
-h1#overhead {
-    color: white;
-    text-align: center;
-    font-family: "Comic Sans MS", cursive, sans-serif;
-    font-size: 20px;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 3;
+    z-index: 1;
 }
