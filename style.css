@@ -1,40 +1,65 @@
 body {
     margin: 0;
     padding: 0;
-    overflow: hidden; /* Prevent scrolling */
-    position: relative;
     background-color: black;
+    overflow: hidden;
 }
 
 #container {
-    width: 100vw;
-    height: 100vh;
-    position: relative;
-    overflow: hidden; /* Prevent panning */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .square {
     width: 50px;
     height: 50px;
-    background-color: green; /* Set squares to green */
+    background-color: green;
     position: absolute;
-    top: 50%;
-    transform: rotateY(60deg);
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%) rotateX(-10deg) rotateY(60deg);
 }
 
 #textbox {
     position: absolute;
-    width: 75%;
-    top: 5%; /* Position 5% from the top of the browser */
+    top: 5%;
     left: 50%;
     transform: translateX(-50%);
-    padding: 10px;
+    width: 75%;
+    text-align: center;
     font-family: "Comic Sans MS", cursive, sans-serif;
     font-size: 13px;
     font-weight: bold;
     color: white;
-    text-align: center;
     border: 4px solid green;
     border-radius: 10px;
+    padding: 10px;
     background-color: black;
+    z-index: 2; /* Ensure it appears above other elements */
+}
+
+#line {
+    position: fixed;
+    top: calc(5% + 40px); /* Start at the bottom center of the textbox */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 200%; /* Overflow past the browser's height */
+    background-color: green;
+    z-index: 1; /* Ensure it overlays the squares */
+    pointer-events: none; /* Ensure it doesn't interfere with user interactions */
+}
+
+h1#overhead {
+    color: white;
+    text-align: center;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 20px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
 }

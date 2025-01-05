@@ -1,3 +1,34 @@
+// Calculate the current day of the year for 2025
+const currentDate = new Date();
+const year = 2025;
+
+// Days in each month for 2025 (non-leap year)
+const daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+// Fetch the current month and day
+const currentMonth = currentDate.getMonth(); // 0-indexed (January = 0, February = 1, etc.)
+const currentDay = currentDate.getDate();   // Day of the month (1-indexed)
+
+// Calculate the current day of the year
+let dayOfYear = currentDay;
+for (let i = 0; i < currentMonth; i++) {
+    dayOfYear += daysInMonth[i];
+}
+
+// Get the current day name (e.g., Monday, Tuesday, etc.)
+const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+const currentDayName = dayNames[currentDate.getDay()];
+
+// Set the title of the webpage dynamically based on the current date
+document.title = "Time";
+
+// Calculate the current hour (0-23)
+let currentHour = currentDate.getHours();
+
+// Get the day name and date for the textbox
+const dayString = `${currentDayName} ${String(currentDay).padStart(2, '0')}/${String(currentMonth + 1).padStart(2, '0')}`;
+
+// Initialize squares and assign positions
 let positionX = window.innerWidth / 2;
 let startX = 0;
 let startY = 0;
@@ -12,30 +43,36 @@ if (/Android/i.test(navigator.userAgent)) {
 let container = document.getElementById('container');
 let days = [];
 
-// Get the current hour (0-23)
-let currentHour = new Date().getHours();
+// Add the textbox
+const textbox = document.createElement('div');
+textbox.id = 'textbox';
+textbox.textContent = `${dayString}\n`; // Add the current day and date at the top
+document.body.appendChild(textbox);
 
-// Initialize squares and assign positions
-for (let dayIndex = 0; dayIndex < 1; dayIndex++) { // Focus on one day
+// Add the static green line
+const line = document.createElement('div');
+line.id = 'line';
+document.body.appendChild(line);
+
+// Initialize square data for 5 days (120 squares)
+for (let dayIndex = 0; dayIndex < 5; dayIndex++) { // Generate 5 days (24 * 5 = 120 squares)
     let day = [];
     for (let hourIndex = 0; hourIndex < 24; hourIndex++) {
         let square = document.createElement('div');
         square.className = 'square';
         square.setAttribute('data-hour', hourIndex + 1);
+        square.setAttribute('data-day', dayIndex + 1);
+        square.setAttribute('data-notes', 'a'); // Empty notes attribute
 
         // Calculate initial horizontal position
-        if (hourIndex + 1 === currentHour) {
-            square.positionX = window.innerWidth / 2; // Center the current hour square
-        } else if (hourIndex + 1 < currentHour) {
-            let offset = (currentHour - (hourIndex + 1)) * 60; // 50px square + 10px padding
-            square.positionX = window.innerWidth / 2 - offset;
-        } else if (hourIndex + 1 > currentHour) {
-            let offset = ((hourIndex + 1) - currentHour) * 60; // 50px square + 10px padding
-            square.positionX = window.innerWidth / 2 + offset;
-        }
-
-        // Apply the calculated position to the square
+        let offset = ((dayIndex * 24 + hourIndex + 1) - (dayOfYear - 1) * 24 - currentHour) * 60; // 50px square + 10px padding
+        square.positionX = window.innerWidth / 2 + offset;
         square.style.left = `${square.positionX}px`;
+
+        // Center the current hour and set it to red
+        if (dayIndex + 1 === currentDay && hourIndex + 1 === currentHour) {
+            square.style.backgroundColor = 'red'; // Highlight the current square
+        }
 
         day.push(square);
     }
@@ -55,6 +92,21 @@ function updatePosition(delta) {
         day.forEach((square) => {
             square.positionX += delta * scrollSpeed;
             square.style.left = `${square.positionX}px`; // Update position visually
+
+            // Check if the square intersects the green line
+            const lineCenterX = window.innerWidth / 2;
+            const squareLeft = square.positionX;
+            const squareRight = square.positionX + 50;
+
+            if (squareLeft <= lineCenterX && squareRight >= lineCenterX) {
+                // Update textbox with square attributes
+                const day = square.getAttribute('data-day');
+                const hour = square.getAttribute('data-hour');
+                const notes = square.getAttribute('data-notes');
+
+                // Update textbox with the day, hour, and notes (newline)
+                textbox.textContent = `${dayString}\n${notes}`;
+            }
         });
     });
 }
