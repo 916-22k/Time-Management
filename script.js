@@ -62,7 +62,7 @@ for (let dayIndex = 0; dayIndex < 5; dayIndex++) { // Generate 5 days (24 * 5 = 
         square.className = 'square';
         square.setAttribute('data-hour', hourIndex + 1);
         square.setAttribute('data-day', dayIndex + 1);
-        square.setAttribute('data-notes', 'a'); // Empty notes attribute
+        square.setAttribute('data-notes', ''); // Empty notes attribute
 
         // Calculate initial horizontal position
         let offset = ((dayIndex * 24 + hourIndex + 1) - (dayOfYear - 1) * 24 - currentHour) * 60; // 50px square + 10px padding
@@ -104,8 +104,8 @@ function updatePosition(delta) {
                 const hour = square.getAttribute('data-hour');
                 const notes = square.getAttribute('data-notes');
 
-                // Update textbox with the day, hour, and notes (newline)
-                textbox.textContent = `${dayString}\n${notes}`;
+                // Update textbox with the day, hour, and notes
+                textbox.textContent = `${dayString}\nNotes: ${notes}`;
             }
         });
     });
@@ -121,10 +121,14 @@ window.addEventListener('touchstart', (event) => {
     startY = event.touches[0].clientY;
 });
 
+// Prevent page scrolling when swiping or touching
 window.addEventListener('touchmove', (event) => {
+    // Prevent default touch behavior (like scrolling the page)
+    event.preventDefault();
+
     let deltaX = event.touches[0].clientX - startX;
     let deltaY = event.touches[0].clientY - startY;
     updatePosition(deltaX + deltaY);
     startX = event.touches[0].clientX;
     startY = event.touches[0].clientY;
-});
+}, { passive: false }); // Use passive: false to allow preventDefault
