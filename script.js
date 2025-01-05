@@ -35,7 +35,7 @@ let startY = 0;
 let scrollSpeed = 0.1;
 
 if (/Android/i.test(navigator.userAgent)) {
-    scrollSpeed = 1.5;
+    scrollSpeed = 0.85;
 } else if (/Windows NT/i.test(navigator.userAgent)) {
     scrollSpeed = 0.1;
 }

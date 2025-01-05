@@ -1,50 +1,67 @@
-body {
+/* Enforce strict viewport dimensions and prevent any scrolling */
+body, html {
     margin: 0;
     padding: 0;
-    overflow: hidden;
-    font-family: Arial, sans-serif;
+    overflow: hidden; /* Disable both vertical and horizontal scrolling */
+    width: 100vw; /* Use viewport width */
+    height: 100vh; /* Use viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: black;
-  }
-  
-  #container {
-    position: relative;
-    height: 100vh;
-    width: 100%;
-  }
-  
-  .square {
+}
+
+/* Textbox for displaying current information */
+#textbox {
     position: absolute;
-    top: 50%;
+    top: 5%;
+    width: 75%; /* Fixed width relative to viewport */
+    padding: 10px;
+    font-size: 13px;
+    font-family: "Comic Sans MS", sans-serif;
+    font-weight: bold;
+    color: white;
+    background-color: black;
+    border: 4px solid green;
+    border-radius: 10px;
+    text-align: center;
+    box-sizing: border-box;
+    z-index: 100;
+}
+
+/* Static green line */
+#line {
+    position: absolute;
+    top: 0;
+    left: 50%; /* Centered horizontally */
+    width: 4px;
+    height: 100vh; /* Full viewport height */
+    background-color: green;
+    transform: translateX(-50%);
+    z-index: 99; /* Below the textbox but above the squares */
+}
+
+/* Container for squares */
+#container {
+    position: absolute;
+    top: 50%; /* Vertically centered */
+    left: 50%; /* Horizontally centered */
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw; /* Limit to the viewport width */
+    height: 100vh; /* Limit to the viewport height */
+    overflow: hidden; /* Ensure squares do not cause overflow */
+}
+
+/* Individual squares */
+.square {
+    position: absolute;
+    top: 50%; /* Vertically centered */
+    transform: translateY(-50%) rotateY(60deg);
     width: 50px;
     height: 50px;
     background-color: green;
-    transform: translateY(-50%) rotateY(60deg);
-  }
-  
-  #textbox {
-    position: fixed;
-    top: 5%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 75%;
-    padding: 10px;
-    font-size: 13px;
-    font-family: 'Comic Sans MS', sans-serif;
-    font-weight: bold;
-    text-align: center;
-    color: white;
-    border: 4px solid green;
-    border-radius: 10px;
-    background-color: black;
-  }
-  
-  #line {
-    position: fixed;
-    left: 50%;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background-color: green;
-    transform: translateX(-50%);
-  }
-  
+    z-index: 1;
+}
