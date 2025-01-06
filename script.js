@@ -35,7 +35,7 @@ let startY = 0;
 let scrollSpeed = 0.1;
 
 if (/Android/i.test(navigator.userAgent)) {
-    scrollSpeed = 0.85;
+    scrollSpeed = 1.5;
 } else if (/Windows NT/i.test(navigator.userAgent)) {
     scrollSpeed = 0.1;
 }
@@ -55,7 +55,7 @@ line.id = 'line';
 document.body.appendChild(line);
 
 // Initialize square data for 5 days (120 squares)
-for (let dayIndex = 0; dayIndex < 5; dayIndex++) { // Generate 5 days (24 * 5 = 120 squares)
+for (let dayIndex = 0; dayIndex < 6; dayIndex++) { // Generate 5 days (24 * 5 = 120 squares)
     let day = [];
     for (let hourIndex = 0; hourIndex < 24; hourIndex++) {
         let square = document.createElement('div');
@@ -85,13 +85,21 @@ days.forEach((day) => {
         container.appendChild(hourSquare);
     });
 });
-
-// Update positions of all squares on scroll
 function updatePosition(delta) {
     days.forEach((day) => {
         day.forEach((square) => {
+            // Update position using delta
             square.positionX += delta * scrollSpeed;
-            square.style.left = `${square.positionX}px`; // Update position visually
+
+            // Constrain position within visible bounds
+            if (square.positionX < -60) { // Slight buffer for squares offscreen left
+                square.style.display = "none"; // Hide squares completely offscreen
+            } else if (square.positionX > window.innerWidth + 60) {
+                square.style.display = "none"; // Hide squares completely offscreen
+            } else {
+                square.style.display = "block"; // Show squares within bounds
+                square.style.left = `${square.positionX}px`;
+            }
 
             // Check if the square intersects the green line
             const lineCenterX = window.innerWidth / 2;
@@ -104,12 +112,12 @@ function updatePosition(delta) {
                 const hour = square.getAttribute('data-hour');
                 const notes = square.getAttribute('data-notes');
 
-                // Update textbox with the day, hour, and notes
                 textbox.textContent = `${dayString}\nNotes: ${notes}`;
             }
         });
     });
 }
+
 
 // Event listeners for scrolling
 window.addEventListener('wheel', (event) => {

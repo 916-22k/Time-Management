@@ -32,10 +32,10 @@ body, html {
 /* Static green line */
 #line {
     position: absolute;
-    top: 0;
+    top: 5%; /* Start at the top border of the textbox */
     left: 50%; /* Centered horizontally */
     width: 4px;
-    height: 100vh; /* Full viewport height */
+    height: calc(100vh - 5%); /* Full viewport height minus the height of the textbox */
     background-color: green;
     transform: translateX(-50%);
     z-index: 99; /* Below the textbox but above the squares */
