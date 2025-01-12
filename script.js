@@ -1,4 +1,3 @@
-// Calculate the current day of the year for 2025
 const currentDate = new Date();
 const year = 2025;
 
@@ -54,8 +53,19 @@ const line = document.createElement('div');
 line.id = 'line';
 document.body.appendChild(line);
 
-// Initialize square data for 5 days (120 squares)
-for (let dayIndex = 0; dayIndex < 6; dayIndex++) { // Generate 5 days (24 * 5 = 120 squares)
+// Custom function to calculate the position and depth of each square
+// This will create a spiral helix effect where squares move in a leftward spiral
+function calculateSpiralPosition(hourIndex, dayIndex) {
+    const radius = 50;  // Distance from the center
+    const angle = (hourIndex / 24) * (2 * Math.PI);  // Angle in radians
+    const zDepth = Math.sin(angle) * 200;  // Z axis (toward/away from viewer)
+    const yPosition = Math.cos(angle) * 100;  // Y axis (vertical position)
+    const xPosition = (hourIndex - 12) * 60;  // X axis (left-right movement)
+
+    return { x: xPosition, y: yPosition + (dayIndex * 250), z: zDepth };
+}
+
+for (let dayIndex = 0; dayIndex < 365; dayIndex++) {
     let day = [];
     for (let hourIndex = 0; hourIndex < 24; hourIndex++) {
         let square = document.createElement('div');
@@ -64,10 +74,17 @@ for (let dayIndex = 0; dayIndex < 6; dayIndex++) { // Generate 5 days (24 * 5 = 
         square.setAttribute('data-day', dayIndex + 1);
         square.setAttribute('data-notes', ''); // Empty notes attribute
 
-        // Calculate initial horizontal position
-        let offset = ((dayIndex * 24 + hourIndex + 1) - (dayOfYear - 1) * 24 - currentHour) * 60; // 50px square + 10px padding
-        square.positionX = window.innerWidth / 2 + offset;
-        square.style.left = `${square.positionX}px`;
+        // Calculate the spiral position for the current square
+        const { x, y, z } = calculateSpiralPosition(hourIndex, dayIndex);
+
+        // Apply the calculated position and depth (Z-axis movement)
+        square.style.left = `${window.innerWidth / 2 + x}px`;
+        square.style.top = `${window.innerHeight / 2 + y}px`;
+        square.style.transform = `translateZ(${z}px) rotateY(60deg)`;  // 2D transform with Z depth
+
+        // Set the size of the squares
+        square.style.width = '50px';
+        square.style.height = '50px';
 
         // Center the current hour and set it to red
         if (dayIndex + 1 === currentDay && hourIndex + 1 === currentHour) {
@@ -85,26 +102,18 @@ days.forEach((day) => {
         container.appendChild(hourSquare);
     });
 });
+
 function updatePosition(delta) {
     days.forEach((day) => {
         day.forEach((square) => {
-            // Update position using delta
-            square.positionX += delta * scrollSpeed;
-
-            // Constrain position within visible bounds
-            if (square.positionX < -60) { // Slight buffer for squares offscreen left
-                square.style.display = "none"; // Hide squares completely offscreen
-            } else if (square.positionX > window.innerWidth + 60) {
-                square.style.display = "none"; // Hide squares completely offscreen
-            } else {
-                square.style.display = "block"; // Show squares within bounds
-                square.style.left = `${square.positionX}px`;
-            }
+            // Update position using delta for horizontal movement
+            const xMovement = delta * scrollSpeed;
+            square.style.left = parseFloat(square.style.left) + xMovement + 'px';
 
             // Check if the square intersects the green line
             const lineCenterX = window.innerWidth / 2;
-            const squareLeft = square.positionX;
-            const squareRight = square.positionX + 50;
+            const squareLeft = parseFloat(square.style.left);
+            const squareRight = squareLeft + parseFloat(square.style.width);
 
             if (squareLeft <= lineCenterX && squareRight >= lineCenterX) {
                 // Update textbox with square attributes
@@ -117,7 +126,6 @@ function updatePosition(delta) {
         });
     });
 }
-
 
 // Event listeners for scrolling
 window.addEventListener('wheel', (event) => {

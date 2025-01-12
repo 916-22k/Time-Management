@@ -32,10 +32,10 @@ body, html {
 /* Static green line */
 #line {
     position: absolute;
-    top: 5%; /* Start at the top border of the textbox */
+    top: calc(5% + 48px); /* Start directly below the textbox border */
     left: 50%; /* Centered horizontally */
     width: 4px;
-    height: calc(100vh - 5%); /* Full viewport height minus the height of the textbox */
+    height: calc(100vh - calc(5% + 48px)); /* Extend from textbox bottom to viewport bottom */
     background-color: green;
     transform: translateX(-50%);
     z-index: 99; /* Below the textbox but above the squares */
@@ -58,10 +58,7 @@ body, html {
 /* Individual squares */
 .square {
     position: absolute;
-    top: 50%; /* Vertically centered */
     transform: translateY(-50%) rotateY(60deg);
-    width: 50px;
-    height: 50px;
     background-color: green;
     z-index: 1;
 }
