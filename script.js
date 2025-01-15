@@ -1,104 +1,158 @@
-const currentDate = new Date();
-const year = 2025;
-const daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-const currentMonth = currentDate.getMonth();
-const currentDay = currentDate.getDate();
-let dayOfYear = currentDay + daysInMonth.slice(0, currentMonth).reduce((a, b) => a + b, 0);
-const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-const currentDayName = dayNames[currentDate.getDay()];
-document.title = "Time";
-let currentHour = currentDate.getHours();
-const dayString = `${currentDayName} ${String(currentDay).padStart(2, '0')}/${String(currentMonth + 1).padStart(2, '0')}`;
-let startX = 0, startY = 0, scrollSpeed = /Android/i.test(navigator.userAgent) ? 1.5 : /Windows NT/i.test(navigator.userAgent) ? 0.5 : 0.1;
-let container = document.getElementById('container');
-let days = [];
-const textbox = document.createElement('div');
-textbox.id = 'textbox';
-textbox.textContent = `${dayString}\n`;
-document.body.appendChild(textbox);
-const line = document.createElement('div');
-line.id = 'line';
-document.body.appendChild(line);
+document.addEventListener("DOMContentLoaded", async () => {
+    const container = document.getElementById('container');
+    const currentDate = new Date();
+    const currentHour = currentDate.getHours();
+    const currentDay = currentDate.getDate();
+    const year = 2025;
+    const daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+    const currentMonth = currentDate.getMonth();
+    const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    const currentDayName = dayNames[currentDate.getDay()];
+    const dayString = `${currentDayName} ${String(currentDay).padStart(2, '0')}/${String(currentMonth + 1).padStart(2, '0')}`;
+    const textbox = document.createElement('div');
+    textbox.id = 'textbox';
+    textbox.textContent = `${dayString}\n`;
+    document.body.appendChild(textbox);
 
-function calculateSpiralPosition(hourIndex, dayIndex) {
-    const radius = 50;
-    const angle = (hourIndex / 24) * (2 * Math.PI);
-    const zDepth = Math.sin(angle) * 200;
-    const yPosition = Math.cos(angle) * 200;
-    const xPosition = ((hourIndex - currentHour) * 60) + ((dayIndex - (currentDay - 1)) * 1450);
-    return { x: xPosition, y: yPosition, z: zDepth };
-}
+    const line = document.createElement('div');
+    line.id = 'line';
+    document.body.appendChild(line);
 
-for (let dayIndex = 0; dayIndex < currentDay + 7; dayIndex++) {
-    let day = [];
-    for (let hourIndex = 0; hourIndex < 24; hourIndex++) {
-        let square = document.createElement('div');
-        square.className = 'square';
-        square.setAttribute('data-hour', hourIndex + 1);
-        square.setAttribute('data-day', dayIndex + 1);
-        square.setAttribute('data-Records', '');
-        const { x, y, z } = calculateSpiralPosition(hourIndex, dayIndex);
-        square.style.left = `${window.innerWidth / 2 + x}px`;
-        square.style.top = `${window.innerHeight / 2 + y}px`;
-        square.style.transform = `translateZ(${z}px) rotateY(60deg)`;
-        square.style.width = '50px';
-        square.style.height = '50px';
-        if (dayIndex === currentDay - 1 && hourIndex === currentHour) {
-            square.style.backgroundColor = 'red';
+    let scrollSpeed = /Android/i.test(navigator.userAgent) ? 1.5 : /Windows NT/i.test(navigator.userAgent) ? 0.5 : 0.1;
+
+    const days = [];
+
+    async function fetchTimeframes() {
+        try {
+            const response = await fetch("http://916-22k.github.io/Time-Management/timeframes.txt");
+            const text = await response.text();
+            const lines = text.trim().split("\n");
+
+            const timeframes = [];
+            lines.forEach((line) => {
+                const [day, hour, action, color] = line.split(",");
+                timeframes.push({
+                    day: parseInt(day, 10),
+                    hour: parseInt(hour, 10),
+                    action,
+                    color,
+                });
+            });
+
+            // Sort timeframes first by day, then by hour
+            timeframes.sort((a, b) => {
+                if (a.day !== b.day) return a.day - b.day;
+                return a.hour - b.hour;
+            });
+
+            return timeframes;
+        } catch (error) {
+            console.error("Error fetching timeframes:", error);
+            return [];
         }
-        day.push(square);
     }
-    days.push(day);
-}
 
-days.forEach((day) => {
-    day.forEach((hourSquare) => {
-        container.appendChild(hourSquare);
-    });
-});
+    function getTaskForDayAndHour(day, hour, timeframes) {
+        for (let i = 0; i < timeframes.length; i++) {
+            const start = timeframes[i];
+            const end = timeframes[i + 1] || { day: Infinity, hour: Infinity }; // End defaults to infinity if last record
 
-fetch('timeframes.txt')
-    .then(response => response.text())
-    .then(data => {
-        const lines = data.split('\n');
-        lines.forEach(line => {
-            const [day, hour, activity, color] = line.split(',');
-            const square = document.querySelector(`[data-day="${day}"][data-hour="${hour}"]`);
-            if (square) {
-                square.style.backgroundColor = color.trim();
-                square.setAttribute('data-Records', activity.trim());
+            if (
+                (day > start.day || (day === start.day && hour >= start.hour)) &&
+                (day < end.day || (day === end.day && hour < end.hour))
+            ) {
+                return start;
             }
-        });
-    });
+        }
+        return null;
+    }
 
-function updatePosition(delta) {
-    days.forEach((day) => {
-        day.forEach((square) => {
-            const xMovement = delta * scrollSpeed;
-            square.style.left = parseFloat(square.style.left) + xMovement + 'px';
-            const lineCenterX = window.innerWidth / 2;
-            const squareLeft = parseFloat(square.style.left);
-            const squareRight = squareLeft + parseFloat(square.style.width);
-            if (squareLeft <= lineCenterX && squareRight >= lineCenterX) {
-                const day = square.getAttribute('data-day');
-                const hour = square.getAttribute('data-hour');
-                const Records = square.getAttribute('data-Records') || 'No Activity';
-                textbox.textContent = `${dayString}\nRecords: Day ${day}, Hour ${hour} - ${Records}`;
+    function calculateSpiralPosition(hourIndex, dayIndex) {
+        const angle = (hourIndex / 24) * (2 * Math.PI);
+        const zDepth = Math.sin(angle) * 200;
+        const yPosition = Math.cos(angle) * 200;
+        const xPosition = ((hourIndex - currentHour) * 60) + ((dayIndex - (currentDay - 1)) * 1450);
+        return { x: xPosition, y: yPosition, z: zDepth };
+    }
+
+    async function generateSquares() {
+        const timeframes = await fetchTimeframes();
+
+        for (let dayIndex = 0; dayIndex < currentDay + 7; dayIndex++) {
+            let day = [];
+            for (let hourIndex = 0; hourIndex < 24; hourIndex++) {
+                const task = getTaskForDayAndHour(dayIndex + 1, hourIndex, timeframes);
+                const square = document.createElement('div');
+                square.className = 'square';
+                square.setAttribute('data-hour', hourIndex + 1);
+                square.setAttribute('data-day', dayIndex + 1);
+                square.setAttribute('data-action', task ? task.action : '');
+                square.setAttribute('data-color', task ? task.color : '');
+
+                const { x, y, z } = calculateSpiralPosition(hourIndex, dayIndex);
+
+                square.style.left = `${window.innerWidth / 2 + x}px`;
+                square.style.top = `${window.innerHeight / 2 + y}px`;
+                square.style.transform = `translateZ(${z}px) rotateY(60deg)`;
+                square.style.width = '50px';
+                square.style.height = '50px';
+
+                if (dayIndex === currentDay - 1 && hourIndex === currentHour) {
+                    square.style.backgroundColor = 'red';
+                } else if (task) {
+                    square.style.backgroundColor = task.color;
+                }
+
+                day.push(square);
             }
-        });
-    });
-}
+            days.push(day);
+        }
 
-window.addEventListener('wheel', (event) => updatePosition(event.deltaX + event.deltaY));
-window.addEventListener('touchstart', (event) => {
-    startX = event.touches[0].clientX;
-    startY = event.touches[0].clientY;
+        days.forEach((day) => {
+            day.forEach((hourSquare) => {
+                container.appendChild(hourSquare);
+            });
+        });
+    }
+
+    function updatePosition(delta) {
+        days.forEach((day) => {
+            day.forEach((square) => {
+                const xMovement = delta * scrollSpeed;
+                square.style.left = parseFloat(square.style.left) + xMovement + 'px';
+
+                const lineCenterX = window.innerWidth / 2;
+                const squareLeft = parseFloat(square.style.left);
+                const squareRight = squareLeft + parseFloat(square.style.width);
+
+                if (squareLeft <= lineCenterX && squareRight >= lineCenterX) {
+                    const day = square.getAttribute('data-day');
+                    const hour = square.getAttribute('data-hour');
+                    const action = square.getAttribute('data-action');
+
+                    textbox.textContent = `${dayString}\nAction: ${action || 'None'}\nDay: ${day}, Hour: ${hour}`;
+                }
+            });
+        });
+    }
+
+    window.addEventListener('wheel', (event) => {
+        updatePosition(event.deltaX + event.deltaY);
+    });
+
+    window.addEventListener('touchstart', (event) => {
+        startX = event.touches[0].clientX;
+        startY = event.touches[0].clientY;
+    });
+
+    window.addEventListener('touchmove', (event) => {
+        event.preventDefault();
+        let deltaX = event.touches[0].clientX - startX;
+        let deltaY = event.touches[0].clientY - startY;
+        updatePosition(deltaX + deltaY);
+        startX = event.touches[0].clientX;
+        startY = event.touches[0].clientY;
+    }, { passive: false });
+
+    await generateSquares();
 });
-window.addEventListener('touchmove', (event) => {
-    event.preventDefault();
-    let deltaX = event.touches[0].clientX - startX;
-    let deltaY = event.touches[0].clientY - startY;
-    updatePosition(deltaX + deltaY);
-    startX = event.touches[0].clientX;
-    startY = event.touches[0].clientY;
-}, { passive: false });
