@@ -1,33 +1,25 @@
 const currentDate = new Date();
 const year = 2025;
-
-// Initialize constants and variables
 const daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 const currentMonth = currentDate.getMonth();
 const currentDay = currentDate.getDate();
-const currentHour = currentDate.getHours();
+let dayOfYear = currentDay + daysInMonth.slice(0, currentMonth).reduce((a, b) => a + b, 0);
+const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 const currentDayName = dayNames[currentDate.getDay()];
-const dayString = `${currentDayName} ${String(currentDay).padStart(2, '0')}/${String(currentMonth + 1).padStart(2, '0')}`;
-let dayOfYear = daysInMonth.slice(0, currentMonth).reduce((acc, days) => acc + days, currentDay);
-
-// Set dynamic title
 document.title = "Time";
-
-// Adjust scroll speed based on device
-let scrollSpeed = /Android/i.test(navigator.userAgent) ? 1.5 : (/Windows NT/i.test(navigator.userAgent) ? 0.5 : 0.1);
-
-// Create elements
-const container = document.getElementById('container');
+let currentHour = currentDate.getHours();
+const dayString = `${currentDayName} ${String(currentDay).padStart(2, '0')}/${String(currentMonth + 1).padStart(2, '0')}`;
+let startX = 0, startY = 0, scrollSpeed = /Android/i.test(navigator.userAgent) ? 1.5 : /Windows NT/i.test(navigator.userAgent) ? 0.5 : 0.1;
+let container = document.getElementById('container');
+let days = [];
 const textbox = document.createElement('div');
-const line = document.createElement('div');
 textbox.id = 'textbox';
 textbox.textContent = `${dayString}\n`;
-line.id = 'line';
 document.body.appendChild(textbox);
+const line = document.createElement('div');
+line.id = 'line';
 document.body.appendChild(line);
 
-// Calculate position in a spiral
 function calculateSpiralPosition(hourIndex, dayIndex) {
     const radius = 50;
     const angle = (hourIndex / 24) * (2 * Math.PI);
@@ -37,34 +29,35 @@ function calculateSpiralPosition(hourIndex, dayIndex) {
     return { x: xPosition, y: yPosition, z: zDepth };
 }
 
-// Generate squares and append them
-const days = Array.from({ length: currentDay + 7 }, (_, dayIndex) =>
-    Array.from({ length: 24 }, (_, hourIndex) => {
-        const square = document.createElement('div');
-        const { x, y, z } = calculateSpiralPosition(hourIndex, dayIndex);
+for (let dayIndex = 0; dayIndex < currentDay + 7; dayIndex++) {
+    let day = [];
+    for (let hourIndex = 0; hourIndex < 24; hourIndex++) {
+        let square = document.createElement('div');
         square.className = 'square';
         square.setAttribute('data-hour', hourIndex + 1);
         square.setAttribute('data-day', dayIndex + 1);
         square.setAttribute('data-Records', '');
-        square.style.cssText = `
-            left: ${window.innerWidth / 2 + x}px;
-            top: ${window.innerHeight / 2 + y}px;
-            transform: translateZ(${z}px) rotateY(60deg);
-            width: 50px;
-            height: 50px;
-        `;
+        const { x, y, z } = calculateSpiralPosition(hourIndex, dayIndex);
+        square.style.left = `${window.innerWidth / 2 + x}px`;
+        square.style.top = `${window.innerHeight / 2 + y}px`;
+        square.style.transform = `translateZ(${z}px) rotateY(60deg)`;
+        square.style.width = '50px';
+        square.style.height = '50px';
         if (dayIndex === currentDay - 1 && hourIndex === currentHour) {
             square.style.backgroundColor = 'red';
         }
-        if (dayIndex === 0 && hourIndex < 7) {
-            square.style.backgroundColor = 'blue';
-        }
-        container.appendChild(square);
-        return square;
-    })
-);
+        day.push(square);
+    }
+    days.push(day);
+}
 
-// Update position during scrolling
+days.forEach((day) => {
+    day.forEach((hourSquare) => {
+        container.appendChild(hourSquare);
+    });
+});
+
+
 function updatePosition(delta) {
     days.forEach((day) => {
         day.forEach((square) => {
@@ -76,14 +69,63 @@ function updatePosition(delta) {
             if (squareLeft <= lineCenterX && squareRight >= lineCenterX) {
                 const day = square.getAttribute('data-day');
                 const hour = square.getAttribute('data-hour');
-                const Records = square.getAttribute('data-Records') + "Hour: " + hour;
-                textbox.textContent = `${dayString}\nRecords: ${Records}`;
+                const Records = square.getAttribute('data-Records') || 'No Activity';
+                textbox.textContent = `${dayString}\nRecords: Day ${day}, Hour ${hour} - ${Records}`;
             }
         });
     });
 }
 
-// Event listeners for scrolling and touch
+
+const fileContent = `
+1,14,Meeting,blue
+1,16,Workout,green
+2,10,Coffee Break,yellow
+`;
+const lines = fileContent.split('\n');
+lines.forEach((line, index) => {
+    console.log(`Line ${index + 1}: ${line}`);
+});
+
+
+
+fetch('http://localhost:8089/timeframes.txt')
+    .then(response => {
+        console.log("Fetching timeframes.txt...");
+        if (!response.ok) {
+            throw new Error(`Failed to load file: ${response.status} ${response.statusText}`);
+        }
+        return response.text();
+    })
+    .then(data => {
+        console.log("File successfully fetched. Raw content:");
+        console.log(data);
+
+        const lines = data.split('\n');
+        console.log("Parsed lines:");
+        lines.forEach((line, index) => {
+            console.log(`Line ${index + 1}: ${line}`);
+        });
+
+        lines.forEach(line => {
+            const [day, hour, activity, color] = line.split(',');
+            if (day && hour && activity && color) {
+                console.log(`Parsed Entry -> Day: ${day.trim()}, Hour: ${hour.trim()}, Activity: ${activity.trim()}, Color: ${color.trim()}`);
+                const square = document.querySelector(`[data-day="${day.trim()}"][data-hour="${hour.trim()}"]`);
+                if (square) {
+                    square.style.backgroundColor = color.trim();
+                    square.setAttribute('data-Records', activity.trim());
+                }
+            } else {
+                console.warn(`Skipping invalid line: ${line}`);
+            }
+        });
+    })
+    .catch(error => {
+        console.error("Error fetching or parsing timeframes.txt:", error);
+    });
+
+
 window.addEventListener('wheel', (event) => updatePosition(event.deltaX + event.deltaY));
 window.addEventListener('touchstart', (event) => {
     startX = event.touches[0].clientX;
@@ -91,8 +133,8 @@ window.addEventListener('touchstart', (event) => {
 });
 window.addEventListener('touchmove', (event) => {
     event.preventDefault();
-    const deltaX = event.touches[0].clientX - startX;
-    const deltaY = event.touches[0].clientY - startY;
+    let deltaX = event.touches[0].clientX - startX;
+    let deltaY = event.touches[0].clientY - startY;
     updatePosition(deltaX + deltaY);
     startX = event.touches[0].clientX;
     startY = event.touches[0].clientY;

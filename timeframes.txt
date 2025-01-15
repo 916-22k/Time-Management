@@ -1,0 +1,5 @@
+1,14,Meeting,blue
+1,16,Workout,green
+2,10,Coffee Break,yellow
+2,20,Dinner,orange
+3,12,Lunch,purple
