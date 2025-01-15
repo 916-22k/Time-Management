@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 square.style.height = '40px';
 
                 if (dayIndex + 1 === currentDay && hourIndex === currentHour) {
-                    square.style.backgroundColor = 'red';
+                    square.style.backgroundColor = 'cyan';
                 } else if (task) {
                     square.style.backgroundColor = task.color;
                 }
@@ -123,24 +123,29 @@ document.addEventListener("DOMContentLoaded", async () => {
     function updatePosition(delta) {
         days.forEach((day) => {
             day.forEach((square) => {
+                // Update position of each square
                 const xMovement = delta * scrollSpeed;
                 square.style.left = parseFloat(square.style.left) + xMovement + 'px';
-
-                const lineCenterX = window.innerWidth / 2;
+    
+                // Check for collision with the green line
+                const lineCenterX = window.innerWidth / 2; // Center of the green line
                 const squareLeft = parseFloat(square.style.left);
                 const squareRight = squareLeft + parseFloat(square.style.width);
-
-                if (squareLeft <= lineCenterX && squareRight >= lineCenterX) {
+    
+                // Update if the line intersects the hitbox (left to right)
+                if (lineCenterX >= squareLeft && lineCenterX <= squareRight) {
                     const day = square.getAttribute('data-day');
                     const hour = square.getAttribute('data-hour');
                     const action = square.getAttribute('data-action');
                     const squareDayName = square.getAttribute('data-dayname');
-
+    
+                    // Update the textbox content immediately
                     textbox.textContent = `${squareDayName}\nDay: ${day}, Hour: ${hour}\nAction: ${action || 'None'}`;
                 }
             });
         });
     }
+    
 
     window.addEventListener('wheel', (event) => {
         updatePosition(event.deltaX + event.deltaY);
