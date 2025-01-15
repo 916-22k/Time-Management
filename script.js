@@ -36,7 +36,7 @@ let scrollSpeed = 0.1;
 if (/Android/i.test(navigator.userAgent)) {
     scrollSpeed = 1.5;
 } else if (/Windows NT/i.test(navigator.userAgent)) {
-    scrollSpeed = 0.1;
+    scrollSpeed = 0.5;
 }
 
 let container = document.getElementById('container');
@@ -59,20 +59,20 @@ function calculateSpiralPosition(hourIndex, dayIndex) {
     const radius = 50;  // Distance from the center
     const angle = (hourIndex / 24) * (2 * Math.PI);  // Angle in radians
     const zDepth = Math.sin(angle) * 200;  // Z axis (toward/away from viewer)
-    const yPosition = Math.cos(angle) * 100;  // Y axis (vertical position)
+    const yPosition = Math.cos(angle) * 200;  // Y axis (vertical position)
     const xPosition = (hourIndex - 12) * 60;  // X axis (left-right movement)
 
-    return { x: xPosition, y: yPosition + (dayIndex * 250), z: zDepth };
+    return { x: xPosition+ (dayIndex * 1450), y: yPosition, z: zDepth };
 }
 
-for (let dayIndex = 0; dayIndex < 365; dayIndex++) {
+for (let dayIndex = 0; dayIndex < 16; dayIndex++) {
     let day = [];
     for (let hourIndex = 0; hourIndex < 24; hourIndex++) {
         let square = document.createElement('div');
         square.className = 'square';
         square.setAttribute('data-hour', hourIndex + 1);
         square.setAttribute('data-day', dayIndex + 1);
-        square.setAttribute('data-notes', ''); // Empty notes attribute
+        square.setAttribute('data-Records', ''); // Empty Records attribute
 
         // Calculate the spiral position for the current square
         const { x, y, z } = calculateSpiralPosition(hourIndex, dayIndex);
@@ -86,9 +86,14 @@ for (let dayIndex = 0; dayIndex < 365; dayIndex++) {
         square.style.width = '50px';
         square.style.height = '50px';
 
+
+
         // Center the current hour and set it to red
-        if (dayIndex + 1 === currentDay && hourIndex + 1 === currentHour) {
-            square.style.backgroundColor = 'red'; // Highlight the current square
+        //if (dayIndex + 1 === currentDay && hourIndex  === currentHour) {
+        //    square.style.backgroundColor = 'red'; // Highlight the current square
+        //}
+        if (dayIndex%2===0){
+            square.style.backgroundColor='red';
         }
 
         day.push(square);
@@ -119,9 +124,9 @@ function updatePosition(delta) {
                 // Update textbox with square attributes
                 const day = square.getAttribute('data-day');
                 const hour = square.getAttribute('data-hour');
-                const notes = square.getAttribute('data-notes');
+                const Records = square.getAttribute('data-Records')+"Hour: "+hour;
 
-                textbox.textContent = `${dayString}\nNotes: ${notes}`;
+                textbox.textContent = `${dayString}\nRecords: ${Records}`;
             }
         });
     });
