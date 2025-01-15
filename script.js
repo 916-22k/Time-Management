@@ -57,7 +57,7 @@ days.forEach((day) => {
     });
 });
 
-fetch('http://localhost/timeframes.txt')
+fetch('timeframes.txt')
     .then(response => response.text())
     .then(data => {
         const lines = data.split('\n');
