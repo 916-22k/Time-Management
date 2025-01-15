@@ -1,21 +1,19 @@
-/* Enforce strict viewport dimensions and prevent any scrolling */
 body, html {
     margin: 0;
     padding: 0;
-    overflow: hidden; /* Disable both vertical and horizontal scrolling */
-    width: 100vw; /* Use viewport width */
-    height: 100vh; /* Use viewport height */
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: black;
 }
 
-/* Textbox for displaying current information */
 #textbox {
     position: absolute;
     top: 5%;
-    width: 75%; /* Fixed width relative to viewport */
+    width: 75%;
     padding: 10px;
     font-size: 13px;
     font-family: "Comic Sans MS", sans-serif;
@@ -29,36 +27,44 @@ body, html {
     z-index: 100;
 }
 
-/* Static green line */
 #line {
     position: absolute;
-    top: calc(5% + 48px); /* Start directly below the textbox border */
-    left: 50%; /* Centered horizontally */
+    top: calc(5% + 48px);
+    left: 50%;
     width: 4px;
-    height: calc(100vh - calc(5% + 48px)); /* Extend from textbox bottom to viewport bottom */
+    height: calc(100vh - calc(5% + 48px));
     background-color: green;
     transform: translateX(-50%);
-    z-index: 99; /* Below the textbox but above the squares */
+    z-index: 99;
 }
 
-/* Container for squares */
 #container {
     position: absolute;
-    top: 50%; /* Vertically centered */
-    left: 50%; /* Horizontally centered */
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
+    perspective: 700px;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100vw; /* Limit to the viewport width */
-    height: 100vh; /* Limit to the viewport height */
-    overflow: hidden; /* Ensure squares do not cause overflow */
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
 }
 
-/* Individual squares */
 .square {
     position: absolute;
-    transform: translateY(-50%) rotateY(60deg);
+    transform: translateY(-50%);
     background-color: green;
     z-index: 1;
+    animation: rotateSquare 3.9s infinite ease-in-out;
+}
+
+@keyframes rotateSquare {
+    from {
+        transform: translate(-50%, -50%) rotateY(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotateY(-180deg);
+    }
 }

@@ -7,11 +7,13 @@ document.addEventListener("DOMContentLoaded", async () => {
     const daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
     const currentMonth = currentDate.getMonth();
     const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    const firstDayOfYear = new Date(year, 0, 1).getDay(); // Day of the week for Jan 1, 2025
+    const startDayOffset = firstDayOfYear; // Use this to correct the alignment
     const currentDayName = dayNames[currentDate.getDay()];
     const dayString = `${currentDayName} ${String(currentDay).padStart(2, '0')}/${String(currentMonth + 1).padStart(2, '0')}`;
     const textbox = document.createElement('div');
     textbox.id = 'textbox';
-    textbox.textContent = `${dayString}\n`;
+    textbox.textContent = `${dayString}\n`; // Initial content
     document.body.appendChild(textbox);
 
     const line = document.createElement('div');
@@ -24,7 +26,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     async function fetchTimeframes() {
         try {
-            const response = await fetch("http://916-22k.github.io/Time-Management/timeframes.txt");
+            const response = await fetch("https://916-22k.github.io/Time-Management/timeframes.txt");
             const text = await response.text();
             const lines = text.trim().split("\n");
 
@@ -71,7 +73,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         const angle = (hourIndex / 24) * (2 * Math.PI);
         const zDepth = Math.sin(angle) * 200;
         const yPosition = Math.cos(angle) * 200;
-        const xPosition = ((hourIndex - currentHour) * 60) + ((dayIndex - (currentDay - 1)) * 1450);
+        const xPosition = ((hourIndex - currentHour) * 60) + ((dayIndex - (currentDay - 1)) * 1440);
         return { x: xPosition, y: yPosition, z: zDepth };
     }
 
@@ -94,10 +96,10 @@ document.addEventListener("DOMContentLoaded", async () => {
                 square.style.left = `${window.innerWidth / 2 + x}px`;
                 square.style.top = `${window.innerHeight / 2 + y}px`;
                 square.style.transform = `translateZ(${z}px) rotateY(60deg)`;
-                square.style.width = '50px';
-                square.style.height = '50px';
+                square.style.width = '40px';
+                square.style.height = '40px';
 
-                if (dayIndex === currentDay - 1 && hourIndex === currentHour) {
+                if (dayIndex + 1 === currentDay && hourIndex === currentHour) {
                     square.style.backgroundColor = 'red';
                 } else if (task) {
                     square.style.backgroundColor = task.color;
@@ -108,8 +110,11 @@ document.addEventListener("DOMContentLoaded", async () => {
             days.push(day);
         }
 
-        days.forEach((day) => {
+        days.forEach((day, dayIndex) => {
             day.forEach((hourSquare) => {
+                const correctedDayNameIndex = (dayIndex + startDayOffset) % 7;
+                const correctedDayName = dayNames[correctedDayNameIndex];
+                hourSquare.setAttribute('data-dayname', correctedDayName); // Add day name attribute
                 container.appendChild(hourSquare);
             });
         });
@@ -129,8 +134,9 @@ document.addEventListener("DOMContentLoaded", async () => {
                     const day = square.getAttribute('data-day');
                     const hour = square.getAttribute('data-hour');
                     const action = square.getAttribute('data-action');
+                    const squareDayName = square.getAttribute('data-dayname');
 
-                    textbox.textContent = `${dayString}\nAction: ${action || 'None'}\nDay: ${day}, Hour: ${hour}`;
+                    textbox.textContent = `${squareDayName}\nDay: ${day}, Hour: ${hour}\nAction: ${action || 'None'}`;
                 }
             });
         });

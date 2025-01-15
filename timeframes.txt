@@ -3,3 +3,8 @@
 15,6,Wake Up,yellow
 15,7,School,white
 15,17,Develop Time-Management,green
+15,19,Dinner,red
+15,21,Develop Time-Management,green
+
+
+
