@@ -57,6 +57,19 @@ days.forEach((day) => {
     });
 });
 
+fetch('http://localhost/timeframes.txt')
+    .then(response => response.text())
+    .then(data => {
+        const lines = data.split('\n');
+        lines.forEach(line => {
+            const [day, hour, activity, color] = line.split(',');
+            const square = document.querySelector(`[data-day="${day}"][data-hour="${hour}"]`);
+            if (square) {
+                square.style.backgroundColor = color.trim();
+                square.setAttribute('data-Records', activity.trim());
+            }
+        });
+    });
 
 function updatePosition(delta) {
     days.forEach((day) => {
@@ -75,56 +88,6 @@ function updatePosition(delta) {
         });
     });
 }
-
-
-const fileContent = `
-1,14,Meeting,blue
-1,16,Workout,green
-2,10,Coffee Break,yellow
-`;
-const lines = fileContent.split('\n');
-lines.forEach((line, index) => {
-    console.log(`Line ${index + 1}: ${line}`);
-});
-
-
-
-fetch('http://localhost:8089/timeframes.txt')
-    .then(response => {
-        console.log("Fetching timeframes.txt...");
-        if (!response.ok) {
-            throw new Error(`Failed to load file: ${response.status} ${response.statusText}`);
-        }
-        return response.text();
-    })
-    .then(data => {
-        console.log("File successfully fetched. Raw content:");
-        console.log(data);
-
-        const lines = data.split('\n');
-        console.log("Parsed lines:");
-        lines.forEach((line, index) => {
-            console.log(`Line ${index + 1}: ${line}`);
-        });
-
-        lines.forEach(line => {
-            const [day, hour, activity, color] = line.split(',');
-            if (day && hour && activity && color) {
-                console.log(`Parsed Entry -> Day: ${day.trim()}, Hour: ${hour.trim()}, Activity: ${activity.trim()}, Color: ${color.trim()}`);
-                const square = document.querySelector(`[data-day="${day.trim()}"][data-hour="${hour.trim()}"]`);
-                if (square) {
-                    square.style.backgroundColor = color.trim();
-                    square.setAttribute('data-Records', activity.trim());
-                }
-            } else {
-                console.warn(`Skipping invalid line: ${line}`);
-            }
-        });
-    })
-    .catch(error => {
-        console.error("Error fetching or parsing timeframes.txt:", error);
-    });
-
 
 window.addEventListener('wheel', (event) => updatePosition(event.deltaX + event.deltaY));
 window.addEventListener('touchstart', (event) => {
