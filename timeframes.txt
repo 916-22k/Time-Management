@@ -1,4 +1,5 @@
 1,0,Not Captured,red
 14,24,Sleep,blue
 15,6,Wake Up,yellow
-15,16,School,white
+15,7,School,white
+15,17,Develop Time-Management,green
