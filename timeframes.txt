@@ -7,7 +7,9 @@
 15,21,Develop Time-Management,green
 15,23,EPQ,orange
 16,1,CS Homework,green
-16,2,EPQ,orange
+16,2,Something Stuck in my eye,red
+16,3,Sleep,blue
+16,6,Wake Up, yellow
 16,7,School,white
 16,16,Not Captured,green
 
