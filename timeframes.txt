@@ -16,7 +16,13 @@
 16,20,EPQ,orange
 16,22,Particle in Eye,red
 16,23,Sleep,blue
-17,6,Wake Up,yellow
-17,7,School,white
-17,14,Not Recorded,red
+17,7,Wake Up,yellow
+17,8,School,white
+17,14,Errands,red
+17,15,Supper,red
+17,16,EPQ,orange
+17,17,Youtube,red
+17,18,EPQ,orange
+
+
 
