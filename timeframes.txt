@@ -14,6 +14,9 @@
 16,16,Supper,red
 16,17,TradingView,purple
 16,20,EPQ,orange
+16,22,Particle in Eye,red
+16,23,Sleep,blue
+17,6,Wake Up,yellow
 17,7,School,white
 17,14,Not Recorded,red
 
