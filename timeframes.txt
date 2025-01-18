@@ -9,7 +9,7 @@
 16,1,CS Homework,green
 16,2,Particle in Eye,red
 16,3,Sleep,blue
-16,6,Wake Up, yellow
+16,6,Wake Up,yellow
 16,7,School,white
 16,16,Supper,red
 16,17,TradingView,purple
@@ -25,6 +25,6 @@
 17,18,EPQ,orange
 17,19,Movies,red
 18,2,Sleep,blue
-18,3,EPQ,orange
-
-
+18,12,Wake Up,yellow
+18,13,Movie,red
+18,14,EPQ,orange
