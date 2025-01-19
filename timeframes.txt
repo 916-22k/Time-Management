@@ -28,6 +28,7 @@
 18,12,Wake Up,yellow
 18,13,Movie,red
 18,14,EPQ,orange
-18,19,Gaming,red
-18,20,EPQ,orange,
-18,22,Not Captured,red
+18,16,Gaming,red
+18,23,Sleep,blue
+19,2,EPQ,orange
+
