@@ -32,12 +32,19 @@
 18,23,Sleep,blue
 19,2,EPQ,orange
 19,7,Sleep,blue
-19,11,Wake Up,orange
+19,11,Wake Up,yellow
 19,12,Shopping,red
 19,16,Supper,red
 19,17,CapitalCOM,purple
 20,8,School,white
-20,14,Lunch,red
-20,15,Not Captured,green
+20,15,Lunch,red
+20,16,Sleep,blue
+20,20,Wake up,yellow
+20,21,EPQ,orange
+20,23,CapitalCOM,purple
+21,8,School,white
+21,16,Supper,red
+21,17,CapitalCOM,purple
+21,20,Not Captured,green
 
 
