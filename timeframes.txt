@@ -58,9 +58,10 @@
 23,8,School,white
 23,14,Lunch,red
 23,15,CapitalCOM,purple
+24,5,Sleep,blue
 24,7,Wake Up,yellow
 24,8,School,white
-24,14,Not Registered,red
-
-
-
+24,16,Sleep,blue
+24,17,Supper,yellow
+24,18,CapitalCOM,purple
+24,21,Not Registered,red
