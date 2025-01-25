@@ -66,4 +66,7 @@
 24,18,Sleep,blue
 25,0,Wake Up,yellow
 25,1,CapitalCOM,purple
+25,2,EPQ,orange
+25,3,Youtube,red
+25,5,EPQ,orange
 25,8,Not Registered,red
