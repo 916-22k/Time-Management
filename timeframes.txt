@@ -75,4 +75,7 @@
 25,14,Lunch,red
 25,15,EPQ,orange
 25,20,Not Registered,red
-
+27,8,School,white
+27,14,Travel Home,red
+27,16,Dentist Appointment,green
+27,18,Travel Home,red
