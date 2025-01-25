@@ -69,4 +69,10 @@
 25,2,EPQ,orange
 25,3,Youtube,red
 25,5,EPQ,orange
-25,8,Not Registered,red
+25,6,Sleep,blue
+25,12,Wake Up,yellow
+25,13,Book Dentist Appointment,red
+25,14,Lunch,red
+25,15,EPQ,orange
+25,20,Not Registered,red
+
