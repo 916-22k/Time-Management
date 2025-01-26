@@ -80,7 +80,8 @@
 26,9,Breakfast,yellow
 26,10,EPQ,orange
 26,12,Youtube,red
-26,13,Researching,purple
+26,15,Hello Fresh Planning,green
+26,16,Researching,purple
 27,8,School,white
 27,14,Travel Home,red
 27,16,Dentist Appointment,green
