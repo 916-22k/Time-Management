@@ -75,7 +75,10 @@
 25,14,Lunch,red
 25,15,EPQ,orange
 25,20,CapitalCOM,purple
-25,24,Not Registered,red
+25,24,Sleep,blue
+26,8,Wake Up,yellow
+26,9,Breakfast,yellow
+26,10,EPQ,orange
 27,8,School,white
 27,14,Travel Home,red
 27,16,Dentist Appointment,green
