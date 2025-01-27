@@ -88,7 +88,9 @@
 27,14,Travel Home,red
 27,16,Dentist Appointment,green
 27,17,Gaming,red
-27,19,Not Recorded,green
+27,20,Movie,red
+27,21,Dinner,red
+27,22,EPQ,orange
 28,7,School,white
 28,16,Travel Home,red
 28,17,Not Recorded
