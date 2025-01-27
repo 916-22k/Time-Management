@@ -82,7 +82,13 @@
 26,12,Youtube,red
 26,15,Hello Fresh Planning,green
 26,16,Researching,purple
+26,22,CapitalCOM,purple
+27,3,Sleep,blue
 27,8,School,white
 27,14,Travel Home,red
 27,16,Dentist Appointment,green
-27,18,Travel Home,red
+27,17,Gaming,red
+27,19,Not Recorded,green
+28,7,School,white
+28,16,Travel Home,red
+28,17,Not Recorded
