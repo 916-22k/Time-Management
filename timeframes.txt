@@ -91,6 +91,11 @@
 27,20,Movie,red
 27,21,Dinner,red
 27,22,EPQ,orange
+28,1,CapitalCOM,purple
+28,3,Sleep,blue
 28,7,School,white
 28,16,Travel Home,red
-28,17,Not Recorded
+28,17,Supper,green
+28,19,Youtube,green
+28,20,CaptialCOM,purple
+
