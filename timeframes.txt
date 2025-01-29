@@ -98,4 +98,18 @@
 28,17,Supper,green
 28,19,Youtube,green
 28,20,CaptialCOM,purple
+29,3,Sleep,blue
+29,7,Wake up,yellow
+29,8,School,white
+29,16,Travel Home,red
+29,17,Supper,green
+29,18,CapitalCOM,purple
+29,24,Not Recorded,red
+30,8,School,white
+30,15,Travel Home,red
+30,16,Not Recorded,red
+
+
+
+
 
