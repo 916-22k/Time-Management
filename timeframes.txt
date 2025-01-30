@@ -81,7 +81,7 @@
 26,10,EPQ,orange
 26,12,Youtube,red
 26,15,Hello Fresh Planning,green
-26,16,Researching,purple
+26,16,Researching,orange
 26,22,CapitalCOM,purple
 27,3,Sleep,blue
 27,8,School,white
@@ -108,8 +108,13 @@
 30,6,Wake Up,yellow
 30,8,School,white
 30,15,Travel Home,red
-30,16,Not Recorded,red
-
+30,16,Supper,green
+30,17,CapitalCOM,purple
+30,24,Not Recorded,red
+31,7,Wake Up,yellow
+31,8,School,white
+31,15,Travel Home,red
+31,16,Not Recorded,red
 
 
 
