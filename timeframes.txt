@@ -104,11 +104,11 @@
 29,16,Travel Home,red
 29,17,Supper,green
 29,18,CapitalCOM,purple
-29,24,Not Recorded,red
+29,24,Sleep,blue
+30,6,Wake Up,yellow
 30,8,School,white
 30,15,Travel Home,red
 30,16,Not Recorded,red
-
 
 
 
