@@ -110,11 +110,12 @@
 30,15,Travel Home,red
 30,16,Supper,green
 30,17,CapitalCOM,purple
-30,24,Not Recorded,red
+31,3,Sleep,red
 31,7,Wake Up,yellow
 31,8,School,white
 31,15,Travel Home,red
-31,16,Not Recorded,red
-
+31,16,Supper,green
+31,19,Youtube,red
+31,24,CapitalCOM,purple
 
 
