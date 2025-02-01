@@ -1,0 +1,6 @@
+1,1,Sleep,blue
+1,9,Wake Up,yellow
+1,10,Breakfast,yellow
+1,11,Fixing Time Management,green
+1,12,CapitalCOM,purple
+1,15,Not Recorded,red

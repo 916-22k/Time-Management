@@ -6,6 +6,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     const year = 2025;
     const daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
     const currentMonth = currentDate.getMonth();
+    const monthIndexForTimeframes=currentDate.getMonth()+1;
+    const timeframeFile=`timeframes${monthIndexForTimeframes}.txt`;
     const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     const firstDayOfYear = new Date(year, 0, 1).getDay(); // Day of the week for Jan 1, 2025
     const startDayOffset = firstDayOfYear; // Use this to correct the alignment
@@ -26,7 +28,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     async function fetchTimeframes() {
         try {
-            const response = await fetch("https://916-22k.github.io/Time-Management/timeframes.txt");
+            const response = await fetch(`https://916-22k.github.io/Time-Management/${timeframeFile}`);
             const text = await response.text();
             const lines = text.trim().split("\n");
 
