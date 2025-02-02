@@ -10,7 +10,8 @@
 2,11,Wake Up,yellow
 2,12,Breakfast,green
 2,16,Movie,red
-2,17,CompSci Coursework,orange
+2,17,CapitalCOM,purple
+2,21,CompSci Coursework,orange
 2,24,Not Recorded,red
 
 
