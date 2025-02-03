@@ -11,11 +11,18 @@
 2,12,Breakfast,green
 2,16,Movie,red
 2,17,CapitalCOM,purple
-3,1,Not Recorded,red
+3,2,Sleep,blue
 3,7,Wake Up,yellow
 3,8,School,white
-3,15,Travel Home,red
-3,16,Haircut,green
-3,17,Not Recorded,red
+3,14,Travel Home,green
+3,15,Supper,green
+3,16,CompSci Coursework,orange
+3,18,Not Recorded,red
+4,7,Wake Up,yellow
+4,8,School,white
+4,16,Travel Home,red
+4,17,Not Recorded,red
+
+
 
 
