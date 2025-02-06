@@ -32,9 +32,10 @@
 6,5,Wake Up,yellow
 6,7,CapitalCOM,purple
 6,8,School,white
-6,15,Setup Meeting,cyan
+6,15,Supper,green
+6,17,Setup Meeting,cyan
 6,18,Parents Evening,yellow
-6,20,Parents Evening Finishes,red
-6,21,CapitalCOM,purple
+6,19,Parents Evening Finishes,red
+6,20,CapitalCOM,purple
 6,24,Not Recorded,red
 
