@@ -37,5 +37,14 @@
 6,18,Parents Evening,yellow
 6,19,Parents Evening Finishes,red
 6,20,CapitalCOM,purple
-6,24,Not Recorded,red
+6,21,Sleep,blue
+7,6,Wake Up,yellow
+7,8,School,white
+7,14,Supper,green
+7,15,CapitalCOM,purple
+7,20,Not Recorded,red
+8,10,Wake Up,yellow
+8,15,Party,green
+8,20,Travel Home,red
+8,21,Not Recorded,red
 
