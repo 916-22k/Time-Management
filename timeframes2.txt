@@ -42,9 +42,11 @@
 7,8,School,white
 7,14,Supper,green
 7,15,CapitalCOM,purple
-7,24,Not Recorded,red
+7,22,Sleep,blue
 8,10,Wake Up,yellow
-8,15,Party,green
+8,11,Breakfast,yellow
+8,12,CapitalCOM,purple
+8,16,Party,green
 8,20,Travel Home,red
 8,21,Not Recorded,red
 
