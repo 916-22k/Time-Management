@@ -52,7 +52,9 @@
 9,10,Wake Up,yellow
 9,11,Breakfast,yellow
 9,12,CapitalCOM,purple
-9,24,Not Recorded,red
+10,2,Gaming,red
+10,3,Sleep,blue
+10,7,Wake Up,yellow
 10,8,School,white
 10,14,Travel Home,red
 10,15,Not Recorded,red
