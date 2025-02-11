@@ -68,4 +68,8 @@
 11,8,School,white
 11,16,Travel Home,red
 11,17,CapitalCOM,purple
-11,20,Not Recorded,red
+12,1,Sleep,blue
+12,7,Wake Up,yellow
+12,8,School,white
+12,15,Walk Home,red
+12,16,Not Recorded,red
