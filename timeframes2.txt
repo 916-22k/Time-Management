@@ -57,4 +57,15 @@
 10,7,Wake Up,yellow
 10,8,School,white
 10,14,Travel Home,red
-10,15,Not Recorded,red
+10,15,CapitalCOM,purple
+10,16,Sleep,blue
+10,20,Wake Up,yellow
+10,21,KFC,green
+10,22,CapitalCOM,purple
+11,4,CapitalCOM,purple
+11,6,Sleep,blue
+11,7,Wake Up,yellow
+11,8,School,white
+11,16,Travel Home,red
+11,17,CapitalCOM,purple
+11,20,Not Recorded,red
