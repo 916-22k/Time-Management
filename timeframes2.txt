@@ -75,8 +75,7 @@
 12,16,CapitalCOM,purple
 12,18,Supper,red
 12,19,CapitalCOM,purple
-12,24,Not Recorded,
-13,7,Wake Up,yellow
+13,5,Breakfast,green
 13,8,School,white
 13,15,Not Recorded,red
 
