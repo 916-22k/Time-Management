@@ -76,6 +76,16 @@
 12,18,Supper,red
 12,19,CapitalCOM,purple
 13,5,Breakfast,green
+13,7,Travel To School,green
 13,8,School,white
-13,15,Not Recorded,red
+13,15,Supper,red
+13,16,CapitalCOM,purple
+13,17,Sleep,blue
+13,23,CapitalCOM,purple
+14,1,Not Recorded
+14,8,School,white
+14,14,Walk Home,red
+14,15,Sleep,blue
+14,16,Not Recorded,red
+
 
