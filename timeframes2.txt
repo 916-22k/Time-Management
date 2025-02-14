@@ -82,10 +82,13 @@
 13,16,CapitalCOM,purple
 13,17,Sleep,blue
 13,23,CapitalCOM,purple
-14,1,Not Recorded
+14,2,Sleep,blue
+14,7,Wake Up,yellow
 14,8,School,white
 14,14,Walk Home,red
 14,15,Sleep,blue
-14,16,Not Recorded,red
-
+14,16,Supper,red
+14,17,Youtube,red
+14,19,CapitalCOM,purple
+14,24,Not Recorded,red
 
