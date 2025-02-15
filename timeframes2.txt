@@ -90,5 +90,9 @@
 14,16,Supper,red
 14,17,Youtube,red
 14,19,CapitalCOM,purple
-14,24,Not Recorded,red
+14,22,Games,green
+14,24,Sleep,blue
+15,10,Wake Up,yellow
+15,11,CapitalCOM,purple
+13,13,Not Recorded,red
 
