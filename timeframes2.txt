@@ -94,5 +94,7 @@
 14,24,Sleep,blue
 15,10,Wake Up,yellow
 15,11,CapitalCOM,purple
-13,13,Not Recorded,red
+15,17,Sleep,blue
+15,19,CapitalCOM,purple
+15,23,Not Recorded,red
 
