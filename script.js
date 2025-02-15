@@ -9,8 +9,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     const monthIndexForTimeframes=currentDate.getMonth()+1;
     const timeframeFile=`timeframes${monthIndexForTimeframes}.txt`;
     const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    const firstDayOfYear = new Date(year, 0, 1).getDay(); // Day of the week for Jan 1, 2025
-    const startDayOffset = firstDayOfYear; // Use this to correct the alignment
+    const firstDayOfYear = new Date(year, 0, 1).getDay(); 
+    const dayOfYear = currentDay + daysInMonth.slice(0, currentMonth).reduce((a, b) => a + b, 0);
+    const startDayOffset = (firstDayOfYear + (dayOfYear - 1)) % 7;
     const currentDayName = dayNames[currentDate.getDay()];
     const dayString = `${currentDayName} ${String(currentDay).padStart(2, '0')}/${String(currentMonth + 1).padStart(2, '0')}`;
     const textbox = document.createElement('div');
