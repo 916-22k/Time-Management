@@ -98,9 +98,11 @@
 15,19,CapitalCOM,purple
 15,23,Dinner,green
 15,24,CapitalCOM,purple
-15,2,Sleep,blue
-15,11,Wake Up,yellow
-15,12,Youtube,red
-15,14,CapitalCOM,purple
-15,20,Not Recorded,red
-
+16,2,Sleep,blue
+16,11,Wake Up,yellow
+16,12,Youtube,red
+16,14,CapitalCOM,purple
+16,22,Dinner,red
+16,23,Movie,red
+16,24,CapitalCOM,purple
+17,3,Not Recorded,red
