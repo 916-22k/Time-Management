@@ -105,4 +105,8 @@
 16,22,Dinner,red
 16,23,Movie,red
 16,24,CapitalCOM,purple
-17,3,Not Recorded,red
+17,2,Sleep,blue
+17,9,Wake Up,blue
+17,10,CapitalCOM,purple
+17,20,Not Recorded,red
+
