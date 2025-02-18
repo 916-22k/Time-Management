@@ -114,4 +114,6 @@
 17,24,Sleep,blue
 18,11,Wake Up,yellow
 18,12,CapitalCOM,purple
-18,14,Not Recorded,red
+18,17,Youtube,red
+18,18,CapitalCOM,purple
+18,24,Not Recorded,red
