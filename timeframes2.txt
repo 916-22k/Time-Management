@@ -110,5 +110,8 @@
 17,10,CapitalCOM,purple
 17,15,Lunch,green
 17,17,CapitalCOM,purple
-17,20,Not Recorded,red
-
+17,23,Dinner,green
+17,24,Sleep,blue
+18,11,Wake Up,yellow
+18,12,CapitalCOM,purple
+18,14,Not Recorded,red
