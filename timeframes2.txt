@@ -117,5 +117,10 @@
 18,17,Youtube,red
 18,18,CapitalCOM,purple
 19,7,Sleep,blue
-19,10,Not Recorded,red
+19,13,Wake Up,yellow
+19,15,Lunch,green
+19,16,CapitalCOM,purple
+19,20,Coursework,orange
+19,23,STAT Test,red
+19,24,Not Recorded,red
 
