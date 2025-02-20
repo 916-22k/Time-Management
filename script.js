@@ -11,8 +11,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     const firstDayOfYear = new Date(year, 0, 1).getDay(); 
     const dayOfYear = currentDay + daysInMonth.slice(0, currentMonth).reduce((a, b) => a + b, 0);
-    const startDayOffset = (firstDayOfYear + (dayOfYear -3)) % 7;
+    const startDayOffset = new Date(new Date().getFullYear(), new Date().getMonth(), 1).getDay();
     const currentDayName = dayNames[currentDate.getDay()];
+    console.log(firstDayOfYear,dayOfYear,startDayOffset,currentMonth)
     const dayString = `${currentDayName} ${String(currentDay).padStart(2, '0')}/${String(currentMonth + 1).padStart(2, '0')}`;
     const textbox = document.createElement('div');
     textbox.id = 'textbox';
