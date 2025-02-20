@@ -127,6 +127,17 @@
 20,3,Sleep,blue
 20,13,Wake Up,yellow
 20,14,CapitalCOM,purple
-20,17,Not Recorded,red
-
+20,23,Dinner,green
+21,1,Not Recorded,red
+21,23,Coursework,orange
+22,3,UCL STAT,white
+22,6,Sleep,blue
+22,9,UCL STAT,white
+22,10,Breakfast,yellow
+22,11,Not Recorded,red
+24,7,Wake Up,yellow
+24,8,School,white
+24,14,Travel Home,red
+24,15,Coursework,orange
+24,17,Not Recorded,red
 
