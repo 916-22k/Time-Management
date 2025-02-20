@@ -124,6 +124,9 @@
 19,18,Travel Home
 19,23,Dinner,red
 20,1,CapitalCOM,purple
-20,4,Not Recorded,red
+20,3,Sleep,blue
+20,13,Wake Up,yellow
+20,14,CapitalCOM,purple
+20,17,Not Recorded,red
 
 
