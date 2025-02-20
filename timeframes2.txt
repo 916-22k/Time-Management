@@ -121,7 +121,7 @@
 19,15,Lunch,green
 19,16,Minecraft,red
 19,17,Socialise,green
-19,18,Travel Home
+19,18,Travel Home,red
 19,23,Dinner,red
 20,1,CapitalCOM,purple
 20,3,Sleep,blue
