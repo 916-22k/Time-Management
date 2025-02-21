@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     const dayOfYear = currentDay + daysInMonth.slice(0, currentMonth).reduce((a, b) => a + b, 0);
     const startDayOffset = new Date(new Date().getFullYear(), new Date().getMonth(), 1).getDay();
     const currentDayName = dayNames[currentDate.getDay()];
-    console.log(firstDayOfYear,dayOfYear,startDayOffset,currentMonth)
     const dayString = `${currentDayName} ${String(currentDay).padStart(2, '0')}/${String(currentMonth + 1).padStart(2, '0')}`;
     const textbox = document.createElement('div');
     textbox.id = 'textbox';
