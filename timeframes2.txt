@@ -133,7 +133,8 @@
 21,16,KFC,red
 21,17,Youtube,red
 21,18,CapitalCOM,purple
-21,23,Not Recorded,red
+21,22,UCL STAT,white
+22,1,Not Recorded,red
 22,6,Sleep,blue
 22,9,UCL STAT,white
 22,10,Breakfast,yellow
