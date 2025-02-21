@@ -130,8 +130,10 @@
 21,1,Sleep,blue
 21,13,Wake Up,yellow
 21,14,CapitalCOM,purple
-21,16,Supper,green
-21,17,Not Recorded,red
+21,16,KFC,red
+21,17,Youtube,red
+21,18,CapitalCOM,purple
+21,23,Not Recorded,red
 22,6,Sleep,blue
 22,9,UCL STAT,white
 22,10,Breakfast,yellow
