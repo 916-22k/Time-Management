@@ -134,14 +134,20 @@
 21,17,Youtube,red
 21,18,CapitalCOM,purple
 21,22,UCL STAT,white
-22,1,Not Recorded,red
-22,6,Sleep,blue
-22,9,UCL STAT,white
-22,10,Breakfast,yellow
-22,11,Not Recorded,red
+22,1,Youtube & UCL STAT,white
+22,6,Breakfast,green
+22,8,Sleep,blue
+22,13,Wake Up,yellow
+22,14,Petsathome,green
+22,17,Travel Home,red
+22,18,Fishtank,green
+22,19,Courswork,white
+22,20,Dinner,green
+22,21,Sleep,blue
+23,1,Not Recorded,red
 24,7,Wake Up,yellow
 24,8,School,white
 24,14,Travel Home,red
-24,15,Coursework,orange
+24,15,Coursework,white
 24,17,Not Recorded,red
 
