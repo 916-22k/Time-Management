@@ -144,7 +144,18 @@
 22,19,Courswork,white
 22,20,Dinner,green
 22,21,Sleep,blue
-23,1,Not Recorded,red
+23,8,Wake Up,red
+23,9,Sleep,blue
+23,11,Wake Up,red
+23,12,Sleep,blue
+23,14,Wake Up,yellow
+23,15,CapitalCOM,purple
+23,17,Freshly Grilled,green
+23,18,Dinner,red
+23,19,CapitalCOM,purple
+23,20,Youtube,red
+23,21,CapitalCOM,purple
+24,1,Not Recorded,red
 24,7,Wake Up,yellow
 24,8,School,white
 24,14,Travel Home,red
