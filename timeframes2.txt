@@ -160,6 +160,17 @@
 24,8,School,white
 24,14,Travel Home,red
 24,15,Supper,green
-24,16,Coursework,white
-24,20,Not Recorded,red
+24,16,Sleep,blue
+24,18,Wake Up,yellow
+24,19,Hello Fresh,green
+24,20,CapitalCOM,purple
+24,24,Not Recorded,red
+25,6,Wake Up,yellow
+25,8,School,white
+25,16,Travel Home,red
+25,17,Supper,green
+25,18,CapitalCOM,purple
+25,20,Coursework,orange
+25,24,Not Recorded,red
+
 
