@@ -155,10 +155,11 @@
 23,19,CapitalCOM,purple
 23,20,Youtube,red
 23,21,CapitalCOM,purple
-24,1,Not Recorded,red
+24,3,Sleep,blue
 24,7,Wake Up,yellow
 24,8,School,white
 24,14,Travel Home,red
-24,15,Coursework,white
-24,17,Not Recorded,red
+24,15,Supper,green
+24,16,Coursework,white
+24,20,Not Recorded,red
 
