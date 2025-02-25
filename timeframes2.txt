@@ -169,10 +169,12 @@
 25,3,Not Recorded,red
 25,6,Wake Up,yellow
 25,8,School,white
-25,16,Travel Home,red
+25,16,Sleep,blue
 25,17,Supper,green
-25,18,CapitalCOM,purple
-25,20,Coursework,orange
-25,24,Not Recorded,red
-
+25,18,Sleep,blue
+25,22,CapitalCOM,purple
+26,8,School,white
+26,16,Travel Home,red
+26,17,Coursework,orange
+26,23,Not Recorded,red
 
