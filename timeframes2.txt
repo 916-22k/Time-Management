@@ -175,6 +175,6 @@
 25,22,CapitalCOM,purple
 26,8,School,white
 26,16,Travel Home,red
-26,17,Coursework,orange
+26,17,CapitalCOM,purple
 26,23,Not Recorded,red
 
