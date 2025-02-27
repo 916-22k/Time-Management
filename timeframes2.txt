@@ -177,4 +177,7 @@
 26,16,Travel Home,red
 26,17,CapitalCOM,purple
 26,23,Not Recorded,red
-
+27,3,Sleep,blue
+27,7,Wake Up,yellow
+27,8,School,white
+27,16,Not Recorded,red
