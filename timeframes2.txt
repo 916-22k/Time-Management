@@ -180,4 +180,13 @@
 27,3,Sleep,blue
 27,7,Wake Up,yellow
 27,8,School,white
-27,16,Not Recorded,red
+27,16,CapitalCOM,purple
+27,23,Sleep,blue
+28,6,Wake Up,yellow
+28,7,Breakfast,green
+28,8,School,white
+28,14,CapitalCOM,purple
+28,15,Travel Home,red
+28,16,Supper,green
+28,17,CapitalCOM,purple
+28,23,Not Recorded,red
