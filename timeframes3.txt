@@ -5,9 +5,13 @@
 1,12,Gaming,red
 1,13,Coursework,orange
 1,14,Lunch,green
-1,15,Coursework,orange
-1,18,Maths,white
-1,20,Not Recorded,red
+1,16,Travel Home,red
+1,18,Sleep,blue
+1,19,Movie,green
+1,23,CapitalCOM,purple
+2,2,Not Recorded,red
+
+
 
 
 
