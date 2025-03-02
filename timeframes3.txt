@@ -9,8 +9,20 @@
 1,18,Sleep,blue
 1,19,Movie,green
 1,23,CapitalCOM,purple
-2,2,Not Recorded,red
-
+2,1,Sleep,blue
+2,12,Wake Up,yellow
+2,13,CapitalCOM,purple
+2,15,Supper,red
+2,16,CapitalCOM,purple
+2,19,Coursework,orange
+2,23,CapitalCOM,purple
+3,1,Sleep,blue
+3,8,Wake Up,yellow
+3,9,Breakfast,yellow
+3,12,STAT Test,green
+3,13,Not Recorded,red
+3,15,Coursework,orange
+3,17,Not Recorded,red
 
 
 
