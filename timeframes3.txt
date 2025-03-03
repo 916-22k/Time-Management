@@ -21,8 +21,12 @@
 3,9,Breakfast,yellow
 3,11,STAT Test,green
 3,16,CapitalCOM,purple
-3,18,Coursework,orange
-3,19,Not Recorded,red
+3,22,Not Recorded,red
+4,2,Sleep,blue
+4,7,Wake Up,yellow
+4,8,School,white
+4,15,Travel Home,red
+4,16,Not Recorded,red
 
 
 
