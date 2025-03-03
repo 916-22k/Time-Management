@@ -20,9 +20,9 @@
 3,8,Wake Up,yellow
 3,9,Breakfast,yellow
 3,11,STAT Test,green
-3,13,Not Recorded,red
-3,15,Coursework,orange
-3,17,Not Recorded,red
+3,16,CapitalCOM,purple
+3,18,Coursework,orange
+3,19,Not Recorded,red
 
 
 
