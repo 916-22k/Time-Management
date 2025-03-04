@@ -28,7 +28,11 @@
 4,7,Wake Up,yellow
 4,8,School,white
 4,15,Travel Home,red
-4,16,Not Recorded,red
+4,16,Supper,green
+4,18,Youtube,red
+4,19,Shower,red
+4,20,CapitalCOM,purple
+4,23,Not Recorded,red
 
 
 
