@@ -36,7 +36,48 @@
 5,6,Wake Up,yellow
 5,7,School,white
 5,16,Travel Home,red
-5,17,Not Recorded,red
+5,17,Supper,green
+5,19,CapitalCOM,purple
+5,21,Coffee,green
+5,22,Coursework,orange
+6,7,School,white
+6,13,Travel Home,red
+6,14,Supper,green
+6,15,Coursework,orange
+7,7,School,white
+7,14,Travel Home,red
+7,15,Supper,green
+7,16,Coursework,orange
+7,23,Sleep,blue
+8,13,Wake Up,yellow
+8,14,Breakfast,yellow
+8,16,Not Recorded,red
+8,23,Sleep,blue
+9,13,Wake Up,yellow
+9,14,Breakfast,yellow
+9,16,Not Recorded,red
+10,7,School,white
+10,14,Travel Home,red
+10,15,Supper,green
+10,17,Coursework,orange
+11,7,School,white
+11,14,Travel Home,red
+11,15,Supper,green
+11,17,Coursework,orange
+12,7,School,white
+12,15,Travel Home,red
+12,16,Courswork,orange
+13,1,sleep,blue
+13,6,Wake Up,yellow
+13,7,School,white
+13,15,Travel Home,red
+13,16,Supper,green
+13,17,Sleep,blue
+14,6,Wake Up,yellow
+14,7,School,white
+14,15,Travel Home,red
+14,16,Not Recorded,red
+
 
 
 
