@@ -39,7 +39,8 @@
 5,17,Supper,green
 5,19,CapitalCOM,purple
 5,21,Coffee,green
-5,22,Coursework,orange
+5,22,CapitalCOM,purple
+6,3,Coursework,orange
 6,7,School,white
 6,13,Travel Home,red
 6,14,Supper,green
