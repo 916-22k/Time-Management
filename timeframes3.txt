@@ -56,14 +56,17 @@
 7,20,Coursework,orange
 7,22,Shower,red
 7,23,Coursework,orange
-8,2,Not Recorded,red
-8,13,Wake Up,yellow
-8,14,Breakfast,yellow
-8,16,Not Recorded,red
-8,23,Sleep,blue
+8,1,Sleep,blue
+8,11,Wake Up,yellow
+8,12,Breakfast,yellow
+8,13,Coursework,orange
+8,15,Cooking,green
+8,18,Coursework,orange
+9,1,Not Recorded,red
+9,6,Sleep,blue
 9,13,Wake Up,yellow
 9,14,Breakfast,yellow
-9,16,Not Recorded,red
+9,15,Not Recorded,red
 10,7,School,white
 10,14,Travel Home,red
 10,15,Supper,green
