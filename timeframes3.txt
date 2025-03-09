@@ -62,11 +62,15 @@
 8,13,Coursework,orange
 8,15,Cooking,green
 8,18,Coursework,orange
-9,1,Not Recorded,red
-9,6,Sleep,blue
-9,13,Wake Up,yellow
-9,14,Breakfast,yellow
-9,15,Not Recorded,red
+9,1,Sleep,blue
+9,3,Not Recorded,red
+9,4,Sleep,blue
+9,10,Wake Up,yellow
+9,11,Shopping,red
+9,13,Errands,red
+9,15,Coursework,orange
+9,23,Not Recorded,red
+10,4,Sleep,blue
 10,7,School,white
 10,14,Travel Home,red
 10,15,Supper,green
