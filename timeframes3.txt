@@ -94,15 +94,23 @@
 14,6,Wake Up,yellow
 14,7,School,white
 14,15,Travel Home,red
-14,16,Not Recorded,red
-14,19,Departure@19:30,purple
-14,20,Relax,blue
-15,5,France Arrival,purple
-15,6,Enjoy France
-16,13,Departure@13:15,purple
-16,14,Relax,blue
-16,21,UK Arrival,purple
-17,6,Wake Up,yellow
+14,16,Help them,red
+14,18,Coursework,orange
+15,2,Not Recorded,red
+15,4,Sleep,blue
+15,10,Wake Up,yellow
+15,11,Take Away,green
+15,13,Lunch,green
+15,14,Coursework,orange
+15,21,Dinner,green
+15,23,Sleep,blue
+16,13,Wake Up,yellow
+16,14,Coursework,orange
+16,16,Travel to cinema,red
+16,17,Cinema,green
+16,19,Travel home,green
+16,20,Coursework,orange
+17,5,Breakfast,green
 17,7,School,white
 17,8,Mock,yellow
 17,15,School,white
