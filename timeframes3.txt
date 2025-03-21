@@ -45,43 +45,91 @@
 6,13,Travel Home,red
 6,14,Supper,green
 6,15,Coursework,orange
+6,18,CapitalCOM,purple
+6,21,Coursework,orange
 7,7,School,white
 7,14,Travel Home,red
 7,15,Supper,green
-7,16,Coursework,orange
-7,23,Sleep,blue
-8,13,Wake Up,yellow
-8,14,Breakfast,yellow
-8,16,Not Recorded,red
-8,23,Sleep,blue
-9,13,Wake Up,yellow
-9,14,Breakfast,yellow
-9,16,Not Recorded,red
+7,16,Sleep,blue
+7,17,Wake Up,yellow
+7,19,Dinner,green
+7,20,Coursework,orange
+7,22,Shower,red
+7,23,Coursework,orange
+8,1,Sleep,blue
+8,11,Wake Up,yellow
+8,12,Breakfast,yellow
+8,13,Coursework,orange
+8,15,Cooking,green
+8,18,Coursework,orange
+9,1,Sleep,blue
+9,3,Not Recorded,red
+9,4,Sleep,blue
+9,10,Wake Up,yellow
+9,11,Shopping,red
+9,13,Errands,red
+9,15,Coursework,orange
+10,1,Sleep,blue
 10,7,School,white
 10,14,Travel Home,red
 10,15,Supper,green
-10,17,Coursework,orange
+10,16,Coursework,orange
 11,7,School,white
-11,14,Travel Home,red
-11,15,Supper,green
+11,15,Travel Home,red
+11,16,Supper,green
 11,17,Coursework,orange
 12,7,School,white
 12,15,Travel Home,red
-12,16,Courswork,orange
-13,1,sleep,blue
+12,16,Supper,red
+12,17,Youtube,green
+12,20,Coursework,orange
+13,1,Sleep,blue
 13,6,Wake Up,yellow
 13,7,School,white
 13,15,Travel Home,red
-13,16,Supper,green
-13,17,Sleep,blue
+13,16,Hair Cut,purple
+13,19,Travel Home,red
+13,20,Coursework,orange
+14,1,Sleep,blue
 14,6,Wake Up,yellow
 14,7,School,white
 14,15,Travel Home,red
-14,16,Not Recorded,red
+14,16,Help them,red
+14,18,Coursework,orange
+15,2,Not Recorded,red
+15,4,Sleep,blue
+15,10,Wake Up,yellow
+15,11,Take Away,green
+15,13,Lunch,green
+15,14,Coursework,orange
+15,21,Dinner,green
+15,23,Sleep,blue
+16,13,Wake Up,yellow
+16,14,Coursework,orange
+16,16,Travel to cinema,red
+16,17,Cinema,green
+16,19,Travel home,green
+16,20,Coursework,orange
+17,5,Breakfast,green
+17,7,School,white
+17,8,Mock,yellow
+17,15,School,white
+17,16,Travel Home,red
+17,17,Study,green
+17,23,Sleep,blue
+18,6,Wake Up,yellow
+18,8,School,white
+18,9,Mock,yellow
+18,15,School,white
+18,16,Travel Home,red
+18,17,Not Recorded,red
 20,7,Wake Up,yellow
 20,8,School,white
 20,16,Travel Home,red
 20,17,Not Recorded,red
+
+
+
 
 
 
