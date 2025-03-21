@@ -78,6 +78,10 @@
 14,7,School,white
 14,15,Travel Home,red
 14,16,Not Recorded,red
+20,7,Wake Up,yellow
+20,8,School,white
+20,16,Travel Home,red
+20,17,Not Recorded,red
 
 
 
