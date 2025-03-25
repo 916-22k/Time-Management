@@ -127,8 +127,16 @@
 20,8,School,white
 20,16,Travel Home,red
 20,17,Not Recorded,red
-
-
+24,7,Wake Up,yellow
+24,8,School,white
+24,16,Sleep,blue
+25,6,Breakfast,yellow
+25,7,Wake Up,yellow
+25,8,School,white
+25,16,Travel Home,red
+25,17,Finish Fishtank,green
+25,19,Supper,green
+25,24,Not Recorded,red
 
 
 
