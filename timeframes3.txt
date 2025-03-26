@@ -135,9 +135,19 @@
 25,8,School,white
 25,16,Travel Home,red
 25,17,Finish Fishtank,green
-25,19,Supper,green
-25,24,Not Recorded,red
-
+25,19,Supper,red
+25,20,Fishtank,green
+26,1,Not Recorded,red
+26,2,Sleep,blue
+26,7,Wake Up,yellow
+26,8,School,white
+26,16,Travel Home,red
+26,18,CapitalCOM,purple
+26,20,Not Recorded,red
+27,7,Wake Up,yellow
+27,8,School,white
+27,16,Travel Home,red
+27,17,Not Recorded,red
 
 
 
