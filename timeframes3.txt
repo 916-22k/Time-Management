@@ -154,13 +154,27 @@
 27,24,Not Recorded,red
 28,7,Wake Up,yellow
 28,8,School,white
-28,14,Travel Home,red
-28,15,Coffee,orange
-28,16,CapitalCOM,purple
-28,21,Not Recorded,red
-
-
-
-
+28,16,Travel Home,red
+28,17,Fishtank,red
+28,19,Not Recorded,red
+29,13,Wake Up
+29,15,Cooking,green
+29,16,Lunch,green
+29,17,Banking,purple
+29,19,Function,red
+29,22,Travel Home,red
+30,21,Sleep,blue
+30,13,Wake Up,yellow
+30,14,Banking,purple
+30,15,Kraken,purple
+30,16,KFC,red
+30,18,Travel Home,red
+30,19,Kraken,purple
+30,21,Updating Timeframes,cyan
+30,22,Kraken,purple
+31,3,Not Recorded,red
+31,7,Wake Up,yellow
+31,8,Authorise Absence,orange
+31,9,Not Recorded,red
 
 
