@@ -174,7 +174,13 @@
 30,22,Kraken,purple
 31,3,Not Recorded,red
 31,7,Wake Up,yellow
-31,8,Authorise Absence,orange
-31,9,Not Recorded,red
+31,8,School,white
+31,14,Travel Home,red
+31,15,Lunch,red
+31,16,Kraken,purple
+31,18,Sleep,blue
+31,21,Wake Up,yellow
+31,22,Kraken,purple
+
 
 
