@@ -26,4 +26,19 @@
 3,17,Further Maths paper,green
 3,19,Dinner,green
 3,20,CapitalCOM,purple
-3,24,Sleep
+3,24,Sleep,blue
+4,12,Wake Up,yellow
+4,13,Travel to Santander,red
+4,14,Business,purple
+4,16,Park,green
+4,20,Monopoly,green
+4,23,Travel Home,red
+4,24,CapitalCOM,purple
+5,3,Sleep,blue
+5,14,Wake Up,yellow
+5,15,Errands,red
+5,18,Timeframes,cyan
+5,19,CapitalCOM,purple
+5,22,Not Recorded,red
+
+
