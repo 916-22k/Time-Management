@@ -42,6 +42,10 @@
 5,20,Argue,red
 5,21,CapitalCOM,purple
 6,3,Sleep,blue
+6,17,Wake Up,yellow
+6,18,Timeframes,cyan
+6,19,CapitalCOM,purple
+6,21,Not Recorded,red
 
 
 
