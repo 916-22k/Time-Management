@@ -47,8 +47,9 @@
 6,19,CapitalCOM,purple
 6,20,Dinner,green
 6,21,CapitalCOM,purple
-7,3,Sleep,blue
-7,8,Wake Up,yellow
-
+7,3,Timeframes,cyans
+7,4,Sleep,blue
+7,11,Wake Up,yellow
+7,12,CapitalCOM,purple
 
 
