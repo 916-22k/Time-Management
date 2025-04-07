@@ -45,7 +45,10 @@
 6,17,Wake Up,yellow
 6,18,Timeframes,cyan
 6,19,CapitalCOM,purple
-6,21,Not Recorded,red
+6,20,Dinner,green
+6,21,CapitalCOM,purple
+7,3,Sleep,blue
+7,8,Wake Up,yellow
 
 
 
