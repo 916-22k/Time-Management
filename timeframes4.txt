@@ -50,6 +50,11 @@
 7,3,Timeframes,cyans
 7,4,Sleep,blue
 7,11,Wake Up,yellow
-7,12,CapitalCOM,purple
-
+7,12,Errands,red
+7,13,CapitalCOM,purple
+7,20,Sleep,blue
+8,6,Wake Up,yellow
+8,7,Breakfast,yellow
+8,8,CapitalCOM,purple
+8,10,Not Recorded,red
 
