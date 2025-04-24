@@ -59,10 +59,14 @@
 8,10,Not Recorded,red
 23,21,Sleep,blue
 24,7,Wake Up,yellow
-24,8,Youtube,red
+24,8,Timeframes,cyan
 24,9,Breakfast,yellow
 24,10,Parker Pen from Amazon,purple
 24,11,Reading Decision Notes from SaveMyExams,green
 24,13,Core Pure 1 SaveMyExams,green
-24,16,Not Recorded,red
-
+24,14,Gaming,red
+24,15,Sleep,blue
+24,16,Shower,red
+24,17,Cooking,orange
+24,18,Supper,red
+24,19,Timeframes,cyan
