@@ -70,3 +70,7 @@
 24,17,Cooking,orange
 24,18,Supper,red
 24,19,Timeframes,cyan
+24,20,Core Pure 1 SaveMyExams,green
+24,24,Not Recorded,red
+
+
