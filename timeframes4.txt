@@ -61,7 +61,8 @@
 24,7,Wake Up,yellow
 24,8,Youtube,red
 24,9,Breakfast,yellow
-24,10,Amazon,red
-24,11,Reading Decision Notes from SaveMyExams,orange
-24,13,Not Recorded,red
+24,10,Parker Pen from Amazon,purple
+24,11,Reading Decision Notes from SaveMyExams,green
+24,13,Core Pure 1 SaveMyExams,green
+24,16,Not Recorded,red
 
