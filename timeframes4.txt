@@ -57,4 +57,11 @@
 8,7,Breakfast,yellow
 8,8,CapitalCOM,purple
 8,10,Not Recorded,red
+23,21,Sleep,blue
+24,7,Wake Up,yellow
+24,8,Youtube,red
+24,9,Breakfast,yellow
+24,10,Amazon,red
+24,11,Reading Decision Notes from SaveMyExams,orange
+24,13,Not Recorded,red
 
