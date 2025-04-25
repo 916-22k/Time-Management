@@ -71,6 +71,11 @@
 24,18,Supper,red
 24,19,Timeframes,cyan
 24,20,Core Pure 1 SaveMyExams,green
-24,24,Not Recorded,red
-
+24,21,CapitalCOM,purple
+25,1,Sleep,blue
+25,9,Wake Up,yellow
+25,10,Cooking,orange
+25,12,Breakfast,yellow
+25,13,CapitalCOM,purple
+25,15,Not Recorded,red
 
