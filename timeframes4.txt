@@ -83,8 +83,10 @@
 26,9,Wake Up,yellow
 26,10,Breakfast,yellow
 26,11,CapitalCOM,purple
-26,13,Not Recorded,red
-
+26,17,Function,white
+26,23,Not Recorded,red
+27,9,Wake Up,yellow
+27,10,Not Recorded,red
 
 
 
