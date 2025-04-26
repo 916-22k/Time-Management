@@ -78,7 +78,13 @@
 25,12,Breakfast,yellow
 25,13,CapitalCOM,purple
 25,18,Timeframes,cyan
-25,19,Not Recorded,red
+25,19,CapitalCOM,purple
+26,1,Sleep,blue
+26,9,Wake Up,yellow
+26,10,Breakfast,yellow
+26,11,CapitalCOM,purple
+26,13,Not Recorded,red
+
 
 
 
