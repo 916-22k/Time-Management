@@ -84,9 +84,18 @@
 26,10,Breakfast,yellow
 26,11,CapitalCOM,purple
 26,17,Function,white
-26,23,Not Recorded,red
+27,2,Sleep,blue
 27,9,Wake Up,yellow
-27,10,Not Recorded,red
-
-
+27,10,CapitalCOM,purple
+28,11,Sleep,blue
+28,14,Wake Up,red
+28,15,Sleep,blue
+28,19,Wake Up,yellow
+28,20,Cooking,green
+28,21,CapitalCOM,purple
+29,2,Sleep,blue
+29,10,Wake Up,yellow
+29,11,Breakfast,green
+29,12,CapitalCOM,purple
+29,15,Not Recorded,red
 
