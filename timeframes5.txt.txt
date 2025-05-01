@@ -1,0 +1,9 @@
+1,1,Sleep,blue
+1,4,Wake Up,red
+1,5,Sleep,blue
+1,7,Wake Up,yellow
+1,8,CapitalCOM,purple
+1,9,Breakfast,yellow
+1,10,Not Recorded,red
+
+
