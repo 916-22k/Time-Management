@@ -1,0 +1,38 @@
+1,1,Sleep,blue
+1,4,Wake Up,red
+1,5,Sleep,blue
+1,7,Wake Up,yellow
+1,8,CapitalCOM,purple
+1,15,Cook,green
+1,16,Supper,yellow
+1,17,CapitalCOM,purple
+1,23,Sleep,blue
+1,24,Cook,red
+2,1,Sleep,blue
+2,8,Wake Up,yellow
+2,9,Cook,green
+2,11,Breakfast,yellow
+2,12,Sleep,blue
+2,15,Wake Up,yellow
+2,16,Errands,red
+2,17,Core Pure Maths Past Paper ALevel,green
+2,18,Maths Past Paper ALevel,green
+2,19,Dinner,red
+2,20,Not Recorded,red
+
+
+4,7,Wake Up,yellow
+4,8,School,white
+4,14,Walk Home,red
+4,15,Not Recorded,red
+4,16,Maths Past Paper ALevel,green
+4,17,Not Recorded,red
+4,19,Dinner,red
+4,20,Sleep,blue
+5,7,Wake Up,yellow
+5,8,School,white
+5,16,Walk Home,red
+5,17,Not Recorded,red
+
+
+
